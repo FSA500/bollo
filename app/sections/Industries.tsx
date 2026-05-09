@@ -9,7 +9,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section id="brancher" className="bg-bollo-bg py-20 px-6 md:px-12">
+    <section id="brancher" className="bg-bollo-bg-gray py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto text-center">
 
         <div className="section-tag mx-auto" style={{ display: 'inline-block' }}>Brancher</div>

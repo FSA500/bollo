@@ -20,15 +20,18 @@ export default function Home() {
 
         {/* 2 — Why reviews matter */}
         <WhyReviews />
+        <hr className="section-divider" />
 
         {/* 3 — How Bollo helps (5 steps) */}
         <HowItWorks />
 
         {/* 4 — AI search & visibility (dark section) */}
         <AiSection />
+        <hr className="section-divider" />
 
         {/* 5 — We answer reviews for you */}
         <ReviewHandling />
+        <hr className="section-divider" />
 
         {/* 6 — Industries */}
         <Industries />

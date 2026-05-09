@@ -28,7 +28,7 @@ const points = [
 
 export default function WhyReviews() {
   return (
-    <section id="ydelser" className="bg-bollo-surface py-20 px-6 md:px-12">
+    <section id="ydelser" className="bg-bollo-surface-gray py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
 
         <div className="section-tag">Hvorfor anmeldelser</div>

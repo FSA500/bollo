@@ -8,7 +8,7 @@ const features = [
 
 export default function ReviewHandling() {
   return (
-    <section className="bg-bollo-surface py-20 px-6 md:px-12">
+    <section className="bg-bollo-surface-gray py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -23,9 +23,9 @@ export default function ReviewHandling() {
               Bollo er ikke bare software — vi er et dedikeret team, der håndterer
               din kommunikation med kunderne professionelt og konsekvent, hver dag.
             </p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-2">
               {features.map((f, i) => (
-                <li key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start gap-3 bg-bollo-bg-gray rounded-xl px-4 py-3">
                   <span className="text-xl flex-shrink-0 mt-0.5">{f.icon}</span>
                   <span className="text-bollo-text-soft text-sm leading-relaxed">{f.text}</span>
                 </li>
