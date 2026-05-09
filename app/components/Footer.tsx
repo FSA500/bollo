@@ -1,4 +1,11 @@
+'use client'
+import { useState } from 'react'
+import TermsModal from './TermsModal'
+import CookieModal from './CookieModal'
+
 export default function Footer() {
+  const [termsOpen, setTermsOpen] = useState(false)
+  const [cookieOpen, setCookieOpen] = useState(false)
   return (
     <footer className="bg-forest-deep text-white/60 py-12 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
@@ -76,9 +83,11 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
           <span>© {new Date().getFullYear()} Bollo. Alle rettigheder forbeholdes.</span>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privatlivspolitik</a>
-            <a href="#" className="hover:text-white transition-colors">Cookiepolitik</a>
+            <button onClick={() => setCookieOpen(true)} className="hover:text-white transition-colors cursor-pointer">Cookiepolitik</button>
+            <button onClick={() => setTermsOpen(true)} className="hover:text-white transition-colors cursor-pointer">Vilkår for brug</button>
           </div>
+          <TermsModal isOpen={termsOpen} onClose={() => setTermsOpen(false)} />
+          <CookieModal isOpen={cookieOpen} onClose={() => setCookieOpen(false)} />
         </div>
       </div>
     </footer>
