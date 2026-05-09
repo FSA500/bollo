@@ -22,22 +22,40 @@ export default function Navbar() {
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <rect x="2" y="2" width="28" height="18" rx="2.5" stroke="#FF6B6B" strokeWidth="1.8" strokeLinejoin="round"/>
-            <rect x="14" y="20" width="4" height="3.5" fill="#FF6B6B" rx="0.5"/>
-            <rect x="10" y="23.5" width="12" height="2" rx="1" fill="#FF6B6B"/>
-            <polygon points="9,8.5 9.624,10.141 11.378,10.228 10.01,11.328 10.47,13.023 9,12.06 7.53,13.023 8.01,11.328 6.622,10.228 8.376,10.141" fill="#FF6B6B"/>
-            <polygon points="16,8.5 16.624,10.141 18.378,10.228 17.01,11.328 17.47,13.023 16,12.06 14.53,13.023 15.01,11.328 13.622,10.228 15.376,10.141" fill="#FF6B6B"/>
-            <polygon points="23,8.5 23.624,10.141 25.378,10.228 24.01,11.328 24.47,13.023 23,12.06 21.53,13.023 22.01,11.328 20.622,10.228 22.376,10.141" fill="#FF6B6B"/>
+        <a href="/" className="flex items-center">
+          <svg width="96" height="66" viewBox="0 0 320 220" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="n-sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#0f2d26"/><stop offset="100%" stopColor="#1a3d35"/></linearGradient>
+              <linearGradient id="n-lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3a7a65"/><stop offset="100%" stopColor="#1a3d35"/></linearGradient>
+              <linearGradient id="n-bt" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#4aaa80"/><stop offset="100%" stopColor="#2d7a5a"/></linearGradient>
+              <radialGradient id="n-sh" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="rgba(0,0,0,0.18)"/><stop offset="100%" stopColor="rgba(0,0,0,0)"/></radialGradient>
+              <linearGradient id="n-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="rgba(255,255,255,0.08)"/><stop offset="100%" stopColor="rgba(255,255,255,0)"/></linearGradient>
+              <filter id="n-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <ellipse cx="160" cy="205" rx="100" ry="10" fill="url(#n-sh)"/>
+            <path d="M 62 148 L 258 148 L 270 162 L 50 162 Z" fill="url(#n-bt)"/>
+            <path d="M 50 162 L 270 162 L 270 172 L 50 172 Z" fill="#2a6a50"/>
+            <path d="M 50 162 L 62 148 L 62 158 L 50 172 Z" fill="#1a5040"/>
+            <path d="M 270 162 L 258 148 L 258 158 L 270 172 Z" fill="#1a4a32"/>
+            <rect x="138" y="150" width="44" height="6" rx="3" fill="rgba(0,0,0,0.2)"/>
+            <rect x="82" y="152" width="156" height="2" rx="1" fill="rgba(0,0,0,0.15)"/>
+            <path d="M 68 48 L 252 48 L 258 54 L 62 54 Z" fill="#0f2820"/>
+            <path d="M 62 54 L 258 54 L 258 148 L 62 148 Z" fill="url(#n-lg)"/>
+            <path d="M 62 54 L 68 48 L 68 142 L 62 148 Z" fill="#0a2018"/>
+            <path d="M 258 54 L 252 48 L 252 142 L 258 148 Z" fill="#0a2018"/>
+            <rect x="72" y="58" width="176" height="84" rx="4" fill="url(#n-sg)"/>
+            <rect x="72" y="58" width="176" height="40" rx="4" fill="url(#n-shine)"/>
+            <rect x="72" y="58" width="176" height="84" rx="4" fill="none" stroke="rgba(109,203,160,0.3)" strokeWidth="1"/>
+            <circle cx="160" cy="55" r="2" fill="#0a2018"/>
+            <circle cx="160" cy="55" r="1" fill="#6DCBA0" opacity="0.6"/>
+            <text x="160" y="103" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="32" fontWeight="900" fill="#ffffff" textAnchor="middle" letterSpacing="-1">Boll<tspan fill="#6DCBA0">o</tspan></text>
+            <g filter="url(#n-glow)" transform="translate(34,32)"><polygon points="0,-13 3,-5 12,-5 5,1 8,10 0,4 -8,10 -5,1 -12,-5 -3,-5" fill="#F5C518"/></g>
+            <g filter="url(#n-glow)" transform="translate(286,28)"><polygon points="0,-14 3.5,-5.5 13,-5.5 5.5,1 8.5,11 0,5 -8.5,11 -5.5,1 -13,-5.5 -3.5,-5.5" fill="#F5C518"/></g>
+            <g filter="url(#n-glow)" transform="translate(20,90) scale(0.7)"><polygon points="0,-13 3,-5 12,-5 5,1 8,10 0,4 -8,10 -5,1 -12,-5 -3,-5" fill="#F5C518"/></g>
+            <g filter="url(#n-glow)" transform="translate(300,85) scale(0.65)"><polygon points="0,-13 3,-5 12,-5 5,1 8,10 0,4 -8,10 -5,1 -12,-5 -3,-5" fill="#F5C518"/></g>
+            <circle cx="52" cy="22" r="2.5" fill="#FFD700" opacity="0.7"/>
+            <circle cx="270" cy="12" r="2" fill="#FFD700" opacity="0.6"/>
           </svg>
-          <span
-            className={`font-display font-black text-xl tracking-tight transition-colors duration-300 ${
-              scrolled ? 'text-forest' : 'text-white'
-            }`}
-          >
-            Bollo
-          </span>
         </a>
 
         {/* Desktop nav links */}
