@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Mascot from '../components/Mascot'
@@ -44,7 +44,7 @@ export default function KontaktPage() {
   })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSubmitted(true)
   }
