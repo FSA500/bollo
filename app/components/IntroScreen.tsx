@@ -11,8 +11,8 @@ export default function IntroScreen() {
     }
     sessionStorage.setItem('bollo-intro', '1')
 
-    const t1 = setTimeout(() => setPhase('exit'), 10000)
-    const t2 = setTimeout(() => setPhase('done'), 11800)
+    const t1 = setTimeout(() => setPhase('exit'), 2500)
+    const t2 = setTimeout(() => setPhase('done'), 3300)
     return () => { clearTimeout(t1); clearTimeout(t2) }
   }, [])
 
@@ -114,9 +114,9 @@ export default function IntroScreen() {
             position: 'absolute',
             top: '50%', left: '50%',
             transform: 'translate(-50%, -80%)',
-            width: '140px', height: '140px',
-            borderRadius: '32px',
-            border: '2px solid rgba(255,107,107,0.4)',
+            width: '130px', height: '130px',
+            borderRadius: '50%',
+            border: '2px solid rgba(255,107,107,0.35)',
             animation: 'intro-ring 3s ease-out 0.6s infinite',
             pointerEvents: 'none',
           }} />
@@ -124,17 +124,20 @@ export default function IntroScreen() {
           {/* 3D Icon */}
           <div style={{
             width: '100px', height: '100px',
-            borderRadius: '26px',
-            background: 'var(--color-coral)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 32px',
-            boxShadow: '0 24px 64px rgba(255,107,107,0.45), 0 0 0 1px rgba(255,255,255,0.08)',
-            animation: 'intro-flip 2.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both, intro-idle 9s ease-in-out 3s infinite',
+            filter: 'drop-shadow(0 16px 40px rgba(255,107,107,0.5))',
+            animation: 'intro-flip 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both, intro-idle 4s ease-in-out 1s infinite',
           }}>
-            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z" fill="white"/>
+            <svg width="80" height="80" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="28" height="18" rx="2.5" stroke="#FF6B6B" strokeWidth="1.8" strokeLinejoin="round"/>
+              <rect x="14" y="20" width="4" height="3.5" fill="#FF6B6B" rx="0.5"/>
+              <rect x="10" y="23.5" width="12" height="2" rx="1" fill="#FF6B6B"/>
+              <polygon points="9,8.5 9.624,10.141 11.378,10.228 10.01,11.328 10.47,13.023 9,12.06 7.53,13.023 8.01,11.328 6.622,10.228 8.376,10.141" fill="#FF6B6B"/>
+              <polygon points="16,8.5 16.624,10.141 18.378,10.228 17.01,11.328 17.47,13.023 16,12.06 14.53,13.023 15.01,11.328 13.622,10.228 15.376,10.141" fill="#FF6B6B"/>
+              <polygon points="23,8.5 23.624,10.141 25.378,10.228 24.01,11.328 24.47,13.023 23,12.06 21.53,13.023 22.01,11.328 20.622,10.228 22.376,10.141" fill="#FF6B6B"/>
             </svg>
           </div>
 
@@ -146,7 +149,7 @@ export default function IntroScreen() {
             color: '#fff',
             letterSpacing: '-0.03em',
             lineHeight: 1,
-            animation: 'intro-rise 1.8s cubic-bezier(0.22, 1, 0.36, 1) 2.8s both',
+            animation: 'intro-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both',
           }}>
             Bollo
           </div>
@@ -160,7 +163,7 @@ export default function IntroScreen() {
             textTransform: 'uppercase',
             letterSpacing: '0.22em',
             marginTop: '16px',
-            animation: 'intro-tag 2s ease-out 4.4s both',
+            animation: 'intro-tag 0.6s ease-out 1.2s both',
           }}>
             Reputation Management
           </div>
@@ -176,7 +179,7 @@ export default function IntroScreen() {
                 width: '7px', height: '7px',
                 borderRadius: '50%',
                 background: 'rgba(255,255,255,0.35)',
-                animation: `intro-dot 1.8s ease-in-out ${6.2 + i * 0.3}s infinite`,
+                animation: `intro-dot 0.8s ease-in-out ${1.6 + i * 0.15}s infinite`,
               }} />
             ))}
           </div>

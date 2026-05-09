@@ -22,18 +22,15 @@ export default function Navbar() {
       <div className="max-w-[1100px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
 
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5">
-          <div
-            className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={{ background: 'var(--color-coral)' }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M12 2L13.8 10.2L22 12L13.8 13.8L12 22L10.2 13.8L2 12L10.2 10.2Z"
-                fill="white"
-              />
-            </svg>
-          </div>
+        <a href="/" className="flex items-center gap-2">
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="28" height="18" rx="2.5" stroke="#FF6B6B" strokeWidth="1.8" strokeLinejoin="round"/>
+            <rect x="14" y="20" width="4" height="3.5" fill="#FF6B6B" rx="0.5"/>
+            <rect x="10" y="23.5" width="12" height="2" rx="1" fill="#FF6B6B"/>
+            <polygon points="9,8.5 9.624,10.141 11.378,10.228 10.01,11.328 10.47,13.023 9,12.06 7.53,13.023 8.01,11.328 6.622,10.228 8.376,10.141" fill="#FF6B6B"/>
+            <polygon points="16,8.5 16.624,10.141 18.378,10.228 17.01,11.328 17.47,13.023 16,12.06 14.53,13.023 15.01,11.328 13.622,10.228 15.376,10.141" fill="#FF6B6B"/>
+            <polygon points="23,8.5 23.624,10.141 25.378,10.228 24.01,11.328 24.47,13.023 23,12.06 21.53,13.023 22.01,11.328 20.622,10.228 22.376,10.141" fill="#FF6B6B"/>
+          </svg>
           <span
             className={`font-display font-black text-xl tracking-tight transition-colors duration-300 ${
               scrolled ? 'text-forest' : 'text-white'
