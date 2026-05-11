@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 
-const cheerMessages = ['Godt valg! 🎉', 'Vi klarer det! 💪', 'Fantastisk! ⭐', 'Lad os gå! 🚀', 'Top valg! 🙌']
-const idleMessages  = ['Hej! Jeg er Bollo 👋', 'Vi styrker dit omdømme!', 'Top 5 på Google Maps ✅', 'Prøv en gratis demo 😊', 'Lad mig hjælpe dig!']
+const cheerMessages = ['Godt valg!', 'Vi klarer det!', 'Fantastisk!', 'Lad os gå!', 'Top valg!']
+const idleMessages  = ['Hej! Jeg er Bollo', 'Vi styrker dit omdømme!', 'Top 5 på Google Maps', 'Prøv en gratis demo', 'Lad mig hjælpe dig!']
 
 export default function Mascot() {
   const [bubble, setBubble]     = useState('')
@@ -71,7 +71,7 @@ export default function Mascot() {
           showBubble ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
         }`}
       >
-        Book en uforpligtende snak 💬
+        Book en uforpligtende snak
         <span className="absolute -bottom-[7px] left-3 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-forest" />
       </a>
 
