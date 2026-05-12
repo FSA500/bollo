@@ -8,27 +8,27 @@ module.exports = {
     extend: {
       colors: {
         mint: {
-          DEFAULT: '#6DCBA0',
-          light:   '#e8f7f0',
-          dark:    '#4aaa80',
+          DEFAULT: '#28E7C4',
+          light:   '#e0fdf8',
+          dark:    '#1bc5a8',
         },
         forest: {
-          DEFAULT: '#1a3d35',
-          deep:    '#0f2d26',
+          DEFAULT: '#0D1127',
+          deep:    '#080C1A',
         },
         coral: {
-          DEFAULT: '#FF6B6B',
-          hover:   '#ff4f4f',
+          DEFAULT: '#6842E2',
+          hover:   '#5a35d4',
         },
         bollo: {
-          bg:           '#f5f7f5',
-          'bg-gray':    '#f1f1f0',
-          surface:      '#ffffff',
-          'surface-gray': '#f7f7f6',
-          text:         '#1c2b28',
-          'text-soft':  '#4a6660',
-          border:       '#e2ece8',
-          'border-gray': '#e4e4e3',
+          bg:             '#f4f4f6',
+          'bg-gray':      '#ededf0',
+          surface:        '#ffffff',
+          'surface-gray': '#f7f7f8',
+          text:           '#0D1127',
+          'text-soft':    '#9CA9B9',
+          border:         '#e0e0e8',
+          'border-gray':  '#e4e4e3',
         },
       },
       fontFamily: {
@@ -36,13 +36,13 @@ module.exports = {
         body:    ['"DM Sans"', 'sans-serif'],
       },
       backgroundImage: {
-        'forest-gradient': 'linear-gradient(135deg, #0f2d26 0%, #1a3d35 60%, #1f5045 100%)',
-        'mint-gradient':   'linear-gradient(135deg, #6DCBA0, #4aaa80)',
+        'forest-gradient': 'linear-gradient(135deg, #080C1A 0%, #0D1127 60%, #111830 100%)',
+        'mint-gradient':   'linear-gradient(135deg, #28E7C4, #1bc5a8)',
       },
       animation: {
-        'float':  'mascotFloat 3.5s ease-in-out infinite',
-        'cheer':  'mascotCheer 0.7s ease-in-out forwards',
-        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'float':    'mascotFloat 3.5s ease-in-out infinite',
+        'cheer':    'mascotCheer 0.7s ease-in-out forwards',
+        'fade-in':  'fadeIn 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
       },
       keyframes: {
