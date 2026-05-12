@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 import IntroScreen from './components/IntroScreen'
+import StyledComponentsRegistry from './components/StyledComponentsRegistry'
 
 export const metadata: Metadata = {
   title: 'Bollo — Reputation Management',
@@ -24,8 +25,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body bg-bollo-bg text-bollo-text antialiased">
-        <IntroScreen />
-        {children}
+        <StyledComponentsRegistry>
+          <IntroScreen />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
