@@ -10,34 +10,67 @@ export const metadata: Metadata = {
   description: 'Professionel håndtering af din Trustpilot-profil. Bollo hjælper dig med at samle flere anmeldelser, svare professionelt og opbygge en stærk Trustpilot-score.',
 }
 
+const InboxIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+    <path d="M5.45 5.11 2 12v3a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
+  </svg>
+)
+const EditIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+  </svg>
+)
+const ShieldIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+)
+const BarChartIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+  </svg>
+)
+const LinkIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+  </svg>
+)
+const TrendingUpIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+  </svg>
+)
+
 const services = [
   {
-    icon: '📬',
+    icon: <InboxIcon />,
     title: 'Automatiseret invitationsflow',
     desc: 'Vi sætter automatiserede invitationer op, der sender anmeldelseslinks til dine kunder på det rette tidspunkt.',
   },
   {
-    icon: '✍️',
+    icon: <EditIcon />,
     title: 'Professionelle svar',
     desc: 'Alle offentlige anmeldelser besvares hurtigt og i din tone of voice — fra de 5-stjernede til de kritiske.',
   },
   {
-    icon: '🛡️',
+    icon: <ShieldIcon />,
     title: 'Håndtering af falske anmeldelser',
     desc: 'Vi hjælper med at identificere og rapportere anmeldelser, der ikke overholder Trustpilots retningslinjer.',
   },
   {
-    icon: '📊',
+    icon: <BarChartIcon />,
     title: 'Score-optimering',
     desc: 'Systematisk arbejde med at hæve din TrustScore og Trustpilot-rating over tid.',
   },
   {
-    icon: '🔗',
+    icon: <LinkIcon />,
     title: 'Widget-integration',
     desc: 'Vi hjælper med at vise dine Trustpilot-anmeldelser smukt på din hjemmeside og i dine mails.',
   },
   {
-    icon: '📈',
+    icon: <TrendingUpIcon />,
     title: 'Månedlig rapportering',
     desc: 'Du modtager en klar oversigt over din Trustpilot-performance og anbefalinger til næste måned.',
   },

@@ -10,41 +10,96 @@ export const metadata: Metadata = {
   description: 'Professionel reputation management for din virksomhed. Bollo håndterer dine anmeldelser, styrker dit omdømme og øger din synlighed på Google Maps, Trustpilot og TripAdvisor.',
 }
 
+const AlertIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+    <path d="M12 9v4"/><path d="M12 17h.01"/>
+  </svg>
+)
+const StarIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+)
+const MessageIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+)
+const ShieldIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+)
+const BarChartIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+  </svg>
+)
+const CpuIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="16" height="16" x="4" y="4" rx="2"/>
+    <rect width="6" height="6" x="9" y="9" rx="1"/>
+    <path d="M15 2v2M9 2v2M2 15h2M2 9h2M15 20v2M9 20v2M20 15h2M20 9h2"/>
+  </svg>
+)
+const MapPinIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+)
+
+const StarLargeIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+)
+const MapPinLargeIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+)
+const SendIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+  </svg>
+)
+
 const painPoints = [
-  { icon: '😤', text: 'Du ved godt anmeldelser er vigtige — men har ikke tid til at følge op' },
-  { icon: '😟', text: 'Negative anmeldelser hænger der og skræmmer potentielle kunder væk' },
-  { icon: '😶', text: 'Du svarer ikke på anmeldelser, fordi du ikke ved hvad du skal skrive' },
-  { icon: '📉', text: 'Din konkurrent har 4,8 stjerner — du har 3,9' },
+  { icon: <AlertIcon />, text: 'Du ved godt anmeldelser er vigtige — men har ikke tid til at følge op' },
+  { icon: <AlertIcon />, text: 'Negative anmeldelser hænger der og skræmmer potentielle kunder væk' },
+  { icon: <AlertIcon />, text: 'Du svarer ikke på anmeldelser, fordi du ikke ved hvad du skal skrive' },
+  { icon: <BarChartIcon />, text: 'Din konkurrent har 4,8 stjerner — du har 3,9' },
 ]
 
 const services = [
   {
-    icon: '⭐',
+    icon: <StarIcon />,
     title: 'Indsamling af anmeldelser',
     desc: 'Vi hjælper dine tilfredse kunder med at skrive anmeldelser via automatiserede og personlige flows.',
   },
   {
-    icon: '💬',
+    icon: <MessageIcon />,
     title: 'Professionelle svar',
     desc: 'Alle anmeldelser — positive som negative — besvares professionelt og i din virksomheds tone of voice.',
   },
   {
-    icon: '🛡️',
+    icon: <ShieldIcon />,
     title: 'Krisehåndtering',
     desc: 'Utilfredse kunder fanges tidligt, og vi håndterer negative situationer diskret og konstruktivt.',
   },
   {
-    icon: '📊',
+    icon: <BarChartIcon />,
     title: 'Månedlige rapporter',
     desc: 'Du modtager en klar rapport over din omdømmestatus, udvikling og anbefalinger.',
   },
   {
-    icon: '🤖',
+    icon: <CpuIcon />,
     title: 'AI-synlighed',
     desc: 'Vi optimerer din profil så du anbefales af ChatGPT, Google AI og andre AI-søgninger.',
   },
   {
-    icon: '📍',
+    icon: <MapPinIcon />,
     title: 'Lokal søgestyrkelse',
     desc: 'Med stærke anmeldelser rykker du op i lokale søgeresultater og Google Maps top 5.',
   },
@@ -54,6 +109,12 @@ const stats = [
   { value: '87%', label: 'af forbrugere læser anmeldelser før de køber lokalt' },
   { value: '3x', label: 'flere anmeldelser med systematisk indsamling' },
   { value: '4,8★', label: 'gennemsnitlig score for vores kunder' },
+]
+
+const platforms = [
+  { icon: <MapPinLargeIcon />, name: 'Google Maps', desc: 'Kom i top 5 lokalt' },
+  { icon: <StarLargeIcon />, name: 'Trustpilot', desc: 'Høj score og synlighed' },
+  { icon: <SendIcon />, name: 'TripAdvisor', desc: 'Stærk rejse- og restaurantprofil' },
 ]
 
 export default function ReputationManagementPage() {
@@ -83,7 +144,7 @@ export default function ReputationManagementPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {painPoints.map((p, i) => (
                 <div key={i} className="bollo-card flex items-start gap-4">
-                  <span style={{ fontSize: '2rem', lineHeight: 1 }}>{p.icon}</span>
+                  <div className="card-icon flex-shrink-0">{p.icon}</div>
                   <p style={{ color: 'var(--color-text)', fontSize: 'var(--text-base)', fontFamily: 'var(--font-body)' }}>
                     {p.text}
                   </p>
@@ -131,17 +192,13 @@ export default function ReputationManagementPage() {
               Bollo håndterer din tilstedeværelse på de tre vigtigste anmeldelsesplatforme i Danmark.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-              {[
-                { icon: '📍', name: 'Google Maps', desc: 'Kom i top 5 lokalt' },
-                { icon: '⭐', name: 'Trustpilot', desc: 'Høj score og synlighed' },
-                { icon: '✈️', name: 'TripAdvisor', desc: 'Stærk rejse- og restaurantprofil' },
-              ].map((p, i) => (
+              {platforms.map((p, i) => (
                 <div
                   key={i}
                   className="rounded-xl p-6 text-center"
                   style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(109,203,160,0.2)' }}
                 >
-                  <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{p.icon}</div>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>{p.icon}</div>
                   <div
                     className="font-bold mb-1"
                     style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: 'var(--text-lg)' }}

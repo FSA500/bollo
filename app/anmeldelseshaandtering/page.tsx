@@ -10,12 +10,38 @@ export const metadata: Metadata = {
   description: 'Professionel håndtering af anmeldelser på Google, Trustpilot og TripAdvisor. Bollo svarer for dig og sikrer, at hver eneste anmeldelse styrker dit omdømme.',
 }
 
+const EyeIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+  </svg>
+)
+const EditIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+  </svg>
+)
+const TargetIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+  </svg>
+)
+const TrendingUpIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+  </svg>
+)
+const BarChartIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+  </svg>
+)
+
 const steps = [
-  { num: '01', icon: '👁️', title: 'Vi overvåger', desc: 'Alle anmeldelser på tværs af platforme monitoreres døgnet rundt. Du går aldrig glip af en anmeldelse.' },
-  { num: '02', icon: '✍️', title: 'Vi svarer professionelt', desc: 'Hvert svar skrives i din virksomheds tone of voice — professionelt, varmt og i overensstemmelse med dit brand.' },
-  { num: '03', icon: '🎯', title: 'Vi håndterer de negative', desc: 'Negative anmeldelser mødes konstruktivt og i mange tilfælde vender vi dem til en positiv oplevelse.' },
-  { num: '04', icon: '📈', title: 'Vi indhenter flere', desc: 'Via automatiserede flows kontakter vi tilfredse kunder og hjælper dem med at dele deres oplevelse.' },
-  { num: '05', icon: '📊', title: 'Vi rapporterer', desc: 'Månedlige rapporter med indsigt i din omdømmestatus, tendenser og konkrete anbefalinger.' },
+  { num: '01', icon: <EyeIcon />, title: 'Vi overvåger', desc: 'Alle anmeldelser på tværs af platforme monitoreres døgnet rundt. Du går aldrig glip af en anmeldelse.' },
+  { num: '02', icon: <EditIcon />, title: 'Vi svarer professionelt', desc: 'Hvert svar skrives i din virksomheds tone of voice — professionelt, varmt og i overensstemmelse med dit brand.' },
+  { num: '03', icon: <TargetIcon />, title: 'Vi håndterer de negative', desc: 'Negative anmeldelser mødes konstruktivt og i mange tilfælde vender vi dem til en positiv oplevelse.' },
+  { num: '04', icon: <TrendingUpIcon />, title: 'Vi indhenter flere', desc: 'Via automatiserede flows kontakter vi tilfredse kunder og hjælper dem med at dele deres oplevelse.' },
+  { num: '05', icon: <BarChartIcon />, title: 'Vi rapporterer', desc: 'Månedlige rapporter med indsigt i din omdømmestatus, tendenser og konkrete anbefalinger.' },
 ]
 
 const examples = [

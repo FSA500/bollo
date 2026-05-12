@@ -32,6 +32,42 @@ const faqs = [
   },
 ]
 
+const MailIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="16" x="2" y="4" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+)
+const PhoneIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.64 2.83l3-.01a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.95-.94a2 2 0 0 1 2.1-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/>
+  </svg>
+)
+const ClockIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </svg>
+)
+const GiftIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <rect x="3" y="8" width="18" height="4" rx="1"/>
+    <path d="M12 8v13"/>
+    <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/>
+    <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>
+  </svg>
+)
+const ArrowRightIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+  </svg>
+)
+
+const contactItems = [
+  { icon: <MailIcon />, label: 'Email', value: 'hej@bollo.dk', href: 'mailto:hej@bollo.dk' },
+  { icon: <PhoneIcon />, label: 'Telefon', value: '+45 00 00 00 00', href: 'tel:+4500000000' },
+  { icon: <ClockIcon />, label: 'Svartid', value: 'Inden for 24 timer på hverdage', href: null },
+]
+
 export default function KontaktPage() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
@@ -99,7 +135,7 @@ export default function KontaktPage() {
                   className="font-bold mb-6"
                   style={{ fontFamily: 'var(--font-display)', color: 'var(--color-forest)', fontSize: 'var(--text-2xl)' }}
                 >
-                  {submitted ? '🎉 Tak for din henvendelse!' : 'Book en gratis demo'}
+                  {submitted ? 'Tak for din henvendelse!' : 'Book en gratis demo'}
                 </h2>
 
                 {submitted ? (
@@ -304,11 +340,7 @@ export default function KontaktPage() {
                   Kontaktoplysninger
                 </h3>
                 <div className="flex flex-col gap-4">
-                  {[
-                    { icon: '📧', label: 'Email', value: 'hej@bollo.dk', href: 'mailto:hej@bollo.dk' },
-                    { icon: '📞', label: 'Telefon', value: '+45 00 00 00 00', href: 'tel:+4500000000' },
-                    { icon: '⏰', label: 'Svartid', value: 'Inden for 24 timer på hverdage', href: null },
-                  ].map((item, i) => (
+                  {contactItems.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="card-icon flex-shrink-0">{item.icon}</div>
                       <div>
@@ -337,7 +369,7 @@ export default function KontaktPage() {
                 className="rounded-xl p-6"
                 style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(109,203,160,0.3)' }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🎁</div>
+                <div style={{ marginBottom: '12px' }}><GiftIcon /></div>
                 <h4
                   className="font-bold mb-2"
                   style={{ fontFamily: 'var(--font-body)', color: 'var(--color-forest)', fontSize: 'var(--text-md)' }}
@@ -353,7 +385,7 @@ export default function KontaktPage() {
                 className="rounded-xl p-6"
                 style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border-mint)' }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>🚀</div>
+                <div style={{ marginBottom: '12px' }}><ArrowRightIcon /></div>
                 <h4
                   className="font-bold mb-2"
                   style={{ fontFamily: 'var(--font-body)', color: 'var(--color-forest)', fontSize: 'var(--text-md)' }}

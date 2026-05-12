@@ -10,65 +10,119 @@ export const metadata: Metadata = {
   description: 'Bollo hjælper virksomheder på tværs af alle brancher med professionel reputation management. Se om din branche er med.',
 }
 
+const WrenchIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+  </svg>
+)
+const UtensilsIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/>
+    <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+  </svg>
+)
+const CrossIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 8v8M8 12h8"/>
+  </svg>
+)
+const BuildingIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+    <path d="M9 22V12h6v10"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01"/>
+  </svg>
+)
+const CartIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+  </svg>
+)
+const BriefcaseIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+  </svg>
+)
+const HomeIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+)
+const GraduationIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </svg>
+)
+const CarIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="18" height="8" x="3" y="11" rx="2"/>
+    <path d="M7 11V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4"/>
+    <circle cx="7.5" cy="15.5" r="1.5"/><circle cx="16.5" cy="15.5" r="1.5"/>
+  </svg>
+)
+
 const industries = [
   {
-    icon: '🔧',
+    icon: <WrenchIcon />,
     name: 'Lokale servicevirksomheder',
     examples: 'VVS, el-installatør, murer, tømrer, rengøring',
     pain: 'Du lever af lokale mund-til-mund anbefalinger — nu sker det digitalt',
     gain: 'Bliv den første anmeldelse nye kunder ser, når de søger lokalt',
   },
   {
-    icon: '🍽️',
+    icon: <UtensilsIcon />,
     name: 'Restauranter & hoteller',
     examples: 'Restauranter, cafeer, hoteller, bed & breakfast',
     pain: 'En enkelt dårlig anmeldelse kan ødelægge et helt weekendforretning',
     gain: 'Stærk TripAdvisor og Google-profil fylder bordene og rummene',
   },
   {
-    icon: '🏥',
+    icon: <CrossIcon />,
     name: 'Klinikker & sundhed',
     examples: 'Tandlæger, fysioterapeuter, psykologer, klinikker',
     pain: 'Patienter søger og vælger baseret på anmeldelser og troværdighed',
     gain: 'Professionel online profil der afspejler den kvalitet du leverer',
   },
   {
-    icon: '🏢',
+    icon: <BuildingIcon />,
     name: 'Kæder med flere lokationer',
     examples: 'Franchise, kædebutikker, landsdækkende servicevirksomheder',
     pain: 'Svært at holde styr på anmeldelser på tværs af mange lokationer',
     gain: 'Centraliseret styring og ensartet kommunikation overalt',
   },
   {
-    icon: '🛒',
+    icon: <CartIcon />,
     name: 'E-commerce',
     examples: 'Online butikker, D2C brands, abonnementsservices',
     pain: 'Trustpilot-score vises i Google Shopping — dårlig score koster konverteringer',
     gain: 'Høj TrustScore der øger konverteringer og sænker returnerings-raten',
   },
   {
-    icon: '💼',
+    icon: <BriefcaseIcon />,
     name: 'B2B virksomheder',
     examples: 'Konsulenter, bureauer, IT-selskaber, rådgivere',
     pain: 'Potentielle kunder googler dig, inden de ringer — hvad finder de?',
     gain: 'Online omdømme der understøtter dit salgsteam og lukker aftaler',
   },
   {
-    icon: '🏠',
+    icon: <HomeIcon />,
     name: 'Ejendomsmæglere',
     examples: 'Boligmæglere, ejendomsadministrationen, udlejere',
     pain: 'Konkurrencen er hård — tillid og anmeldelser afgør hvem sælger vælger',
     gain: 'Stærk profil der skiller dig ud fra konkurrenterne i lokalområdet',
   },
   {
-    icon: '🎓',
+    icon: <GraduationIcon />,
     name: 'Uddannelse & kurser',
     examples: 'Uddannelsesinstitutioner, sprogcentre, kursusvirksomheder',
     pain: 'Studerende og deltagere undersøger omhyggeligt, inden de tilmelder sig',
     gain: 'Positiv online tilstedeværelse der øger tilmeldinger og fastholdelse',
   },
   {
-    icon: '🚗',
+    icon: <CarIcon />,
     name: 'Bilbranchen',
     examples: 'Autoforhandlere, bilværksteder, bilrengøring',
     pain: 'Kunder misbruger anmeldelser som forhandlingsværktøj',

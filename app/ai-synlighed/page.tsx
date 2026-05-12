@@ -10,31 +10,91 @@ export const metadata: Metadata = {
   description: 'I 2026 søger dine kunder via AI-værktøjer. Anmeldelser og online troværdighed afgør om din virksomhed bliver anbefalet. Bollo sikrer din AI-synlighed.',
 }
 
+const CpuIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="16" height="16" x="4" y="4" rx="2"/>
+    <rect width="6" height="6" x="9" y="9" rx="1"/>
+    <path d="M15 2v2M9 2v2M2 15h2M2 9h2M15 20v2M9 20v2M20 15h2M20 9h2"/>
+  </svg>
+)
+const SearchIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+  </svg>
+)
+const SparkleIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/>
+  </svg>
+)
+const StarIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+)
+const MessageIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+)
+const ClipboardIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+  </svg>
+)
+const MapPinIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+)
+
+const TrendingUpLargeIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+  </svg>
+)
+const StarLargeIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+)
+const MessageLargeIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+)
+const ZapLargeIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-mint-dark)' }}>
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </svg>
+)
+
 const aiTools = [
-  { icon: '🤖', name: 'ChatGPT', desc: 'Millioner af brugere spørger dagligt om lokale anbefalinger' },
-  { icon: '🔍', name: 'Google AI Overview', desc: 'Googles AI-svar vises øverst og dominerer søgeresultater' },
-  { icon: '💜', name: 'Perplexity', desc: 'Den hurtigst voksende AI-søgemaskine prioriterer troværdige kilder' },
-  { icon: '🔷', name: 'Microsoft Copilot', desc: 'Integreret i Windows og Edge — enorm brugerbase' },
+  { icon: <CpuIcon />, name: 'ChatGPT', desc: 'Millioner af brugere spørger dagligt om lokale anbefalinger' },
+  { icon: <SearchIcon />, name: 'Google AI Overview', desc: 'Googles AI-svar vises øverst og dominerer søgeresultater' },
+  { icon: <SparkleIcon />, name: 'Perplexity', desc: 'Den hurtigst voksende AI-søgemaskine prioriterer troværdige kilder' },
+  { icon: <SparkleIcon />, name: 'Microsoft Copilot', desc: 'Integreret i Windows og Edge — enorm brugerbase' },
 ]
 
 const factors = [
   {
-    icon: '⭐',
+    icon: <StarIcon />,
     title: 'Antal og kvalitet af anmeldelser',
     desc: 'AI-modeller læser tusindvis af anmeldelser og bruger dem til at vurdere troværdighed. Flere gode anmeldelser = bedre anbefalinger.',
   },
   {
-    icon: '💬',
+    icon: <MessageIcon />,
     title: 'Aktive og professionelle svar',
     desc: 'Virksomheder der aktivt engagerer sig med anmeldelserne signalerer troværdighed og god kundepleje.',
   },
   {
-    icon: '📋',
+    icon: <ClipboardIcon />,
     title: 'Konsistent online tilstedeværelse',
     desc: 'Sammenhængende information på tværs af platforme giver AI-modeller et klart og troværdigt billede.',
   },
   {
-    icon: '📍',
+    icon: <MapPinIcon />,
     title: 'Lokal SEO-styrke',
     desc: 'Google Maps-placering og lokal søgesynlighed føder direkte ind i AI-anbefalinger.',
   },
@@ -70,13 +130,13 @@ export default function AiSynlighedPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: '📈', stat: '40%', label: 'af søgninger i 2026 sker via AI-assistenter' },
-                  { icon: '⭐', stat: '4,5+', label: 'stjerner kræves for at blive anbefalet af AI' },
-                  { icon: '💬', stat: '50+', label: 'anmeldelser er minimumsstandarden' },
-                  { icon: '⚡', stat: '3 sek', label: 'er alt hvad en AI bruger på at værtssætte din profil' },
+                  { icon: <TrendingUpLargeIcon />, stat: '40%', label: 'af søgninger i 2026 sker via AI-assistenter' },
+                  { icon: <StarLargeIcon />, stat: '4,5+', label: 'stjerner kræves for at blive anbefalet af AI' },
+                  { icon: <MessageLargeIcon />, stat: '50+', label: 'anmeldelser er minimumsstandarden' },
+                  { icon: <ZapLargeIcon />, stat: '3 sek', label: 'er alt hvad en AI bruger på at værtssætte din profil' },
                 ].map((item, i) => (
                   <div key={i} className="bollo-card text-center">
-                    <div style={{ fontSize: '1.8rem', marginBottom: '8px' }}>{item.icon}</div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>{item.icon}</div>
                     <div
                       className="font-extrabold"
                       style={{ fontFamily: 'var(--font-display)', color: 'var(--color-mint-dark)', fontSize: 'var(--text-xl)' }}
@@ -108,7 +168,7 @@ export default function AiSynlighedPage() {
                   className="rounded-xl p-6 text-left"
                   style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(109,203,160,0.2)' }}
                 >
-                  <div style={{ fontSize: '2rem', marginBottom: '12px' }}>{t.icon}</div>
+                  <div style={{ marginBottom: '12px', color: 'var(--color-mint)' }}>{t.icon}</div>
                   <div
                     className="font-bold mb-2"
                     style={{ fontFamily: 'var(--font-display)', color: '#fff', fontSize: 'var(--text-lg)' }}

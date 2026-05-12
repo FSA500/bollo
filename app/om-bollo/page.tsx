@@ -10,24 +10,66 @@ export const metadata: Metadata = {
   description: 'Lær Bollo at kende. Vi er et dansk bureau specialiseret i reputation management — og vi er passionerede om at hjælpe virksomheder med at vokse gennem et stærkt omdømme.',
 }
 
+const TargetIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+  </svg>
+)
+const UsersIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+)
+const ZapIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </svg>
+)
+const LightbulbIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+    <path d="M9 18h6"/><path d="M10 22h4"/>
+  </svg>
+)
+const BuildingIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
+    <path d="M9 22V12h6v10"/><path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M12 11h.01M16 11h.01"/>
+  </svg>
+)
+const LockIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+  </svg>
+)
+const PhoneIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.64 2.83l3-.01a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.95-.94a2 2 0 0 1 2.1-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.92z"/>
+  </svg>
+)
+
 const values = [
   {
-    icon: '🎯',
+    icon: <TargetIcon />,
     title: 'Resultater over processer',
     desc: 'Vi måler vores succes på dine resultater — ikke på aktiviteter. Hvis din score ikke stiger, er vi ikke tilfredse.',
   },
   {
-    icon: '🤝',
+    icon: <UsersIcon />,
     title: 'Ærlighed altid',
     desc: 'Vi siger det som det er. Hvis vi ser et problem, siger vi det. Og vi anbefaler aldrig noget, du ikke har brug for.',
   },
   {
-    icon: '⚡',
+    icon: <ZapIcon />,
     title: 'Hastighed er service',
     desc: 'Anmeldelser kræver hurtige svar. Vores processer er bygget til at agere hurtigt — altid.',
   },
   {
-    icon: '🧠',
+    icon: <LightbulbIcon />,
     title: 'Vi forstår din branche',
     desc: 'Vi bruger tid på at forstå, hvem du er og hvem dine kunder er, inden vi skriver et eneste svar.',
   },
@@ -39,6 +81,13 @@ const timeline = [
   { year: '2024', event: 'AI-synlighed tilføjes som kerneydelse — vi ser skifte i kundernes søgeadfærd' },
   { year: '2025', event: 'Over 100 aktive kunder og partnerships med ledende brancheforeninger' },
   { year: '2026', event: 'Lancering af ny platform med realtids-dashboard og AI-optimering' },
+]
+
+const bullets = [
+  { icon: <BuildingIcon />, text: 'Dansk bureau med fokus på det danske marked' },
+  { icon: <UsersIcon />, text: 'Dedikerede specialister med branchekendskab' },
+  { icon: <LockIcon />, text: 'GDPR-compliant og datasikker håndtering' },
+  { icon: <PhoneIcon />, text: 'Personlig kontaktperson til din konto' },
 ]
 
 export default function OmBolloPage() {
@@ -73,12 +122,7 @@ export default function OmBolloPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-4">
-                {[
-                  { icon: '🏢', text: 'Dansk bureau med fokus på det danske marked' },
-                  { icon: '👥', text: 'Dedikerede specialister med branchekendskab' },
-                  { icon: '🔒', text: 'GDPR-compliant og datasikker håndtering' },
-                  { icon: '📞', text: 'Personlig kontaktperson til din konto' },
-                ].map((item, i) => (
+                {bullets.map((item, i) => (
                   <div key={i} className="bollo-card flex items-center gap-4">
                     <div className="card-icon flex-shrink-0">{item.icon}</div>
                     <span style={{ color: 'var(--color-text)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-base)' }}>
@@ -132,7 +176,6 @@ export default function OmBolloPage() {
             <div className="flex flex-col gap-0">
               {timeline.map((t, i) => (
                 <div key={i} className="flex gap-6 pb-10 relative">
-                  {/* Line */}
                   {i < timeline.length - 1 && (
                     <div
                       style={{
@@ -145,7 +188,6 @@ export default function OmBolloPage() {
                       }}
                     />
                   )}
-                  {/* Dot */}
                   <div
                     className="flex-shrink-0 flex items-center justify-center rounded-full font-extrabold"
                     style={{
