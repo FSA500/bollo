@@ -6,7 +6,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           {/* Tag */}
           <div className="section-tag-dark mb-6">
-            ⭐ Reputation Management
+            Reputation Management
           </div>
 
           {/* Headline */}
