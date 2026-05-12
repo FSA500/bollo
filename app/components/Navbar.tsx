@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-bollo-bg/90 backdrop-blur-md border-b border-mint/20 shadow-sm'
+          ? 'bg-bollo-bg/90 dark:bg-forest-deep/95 backdrop-blur-md border-b border-mint/20 shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -68,7 +68,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-bollo-bg border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bollo-text-soft">
+        <div className="md:hidden bg-bollo-bg dark:bg-forest-deep border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bollo-text-soft dark:text-white/70">
           <a href="/reputation-management" onClick={() => setMenuOpen(false)} className="hover:text-forest">Ydelser</a>
           <a href="/ai-synlighed"          onClick={() => setMenuOpen(false)} className="hover:text-forest">AI-synlighed</a>
           <a href="/brancher"              onClick={() => setMenuOpen(false)} className="hover:text-forest">Brancher</a>

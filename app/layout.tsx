@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '../styles/globals.css'
 import IntroScreen from './components/IntroScreen'
 import StyledComponentsRegistry from './components/StyledComponentsRegistry'
+import { ThemeProvider } from './components/ThemeProvider'
 
 export const metadata: Metadata = {
   title: 'Bollo — Reputation Management',
@@ -24,10 +25,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body bg-bollo-bg text-bollo-text antialiased">
+      <body className="font-body bg-bollo-bg dark:bg-forest text-bollo-text dark:text-white antialiased">
         <StyledComponentsRegistry>
-          <IntroScreen />
-          {children}
+          <ThemeProvider>
+            <IntroScreen />
+            {children}
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>

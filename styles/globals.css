@@ -45,6 +45,24 @@
   --max-width-text: 640px;
 }
 
+/* ── Dark mode overrides ── */
+html.dark {
+  --color-bg:             #0e1224;
+  --color-surface:        #141829;
+  --color-text:           #dce1ed;
+  --color-text-soft:      #4e5f74;
+  --color-border:         #1e2440;
+  --color-border-mint:    rgba(40, 231, 196, 0.15);
+  --color-gray-50:        #111525;
+  --color-gray-100:       #191d2e;
+  --color-gray-200:       #252a42;
+}
+
+html.dark .section-h2            { color: #ffffff; }
+html.dark .section-tag           { background: rgba(40,231,196,0.12); color: var(--color-mint); }
+html.dark .bollo-card            { box-shadow: 0 2px 14px rgba(0,0,0,0.35); }
+html.dark .section-divider       { border-color: var(--color-gray-200); }
+
 /* ── Base ── */
 html { scroll-behavior: smooth; }
 

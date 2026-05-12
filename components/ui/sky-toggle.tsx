@@ -1,11 +1,19 @@
+'use client'
 import React from 'react';
 import styled from 'styled-components';
+import { useTheme } from '@/app/components/ThemeProvider';
 
 const Switch = () => {
+  const { dark, toggle } = useTheme();
   return (
     <StyledWrapper>
       <label className="theme-switch">
-        <input type="checkbox" className="theme-switch__checkbox" />
+        <input
+          type="checkbox"
+          className="theme-switch__checkbox"
+          checked={dark}
+          onChange={toggle}
+        />
         <div className="theme-switch__container">
           <div className="theme-switch__clouds" />
           <div className="theme-switch__stars-container">
@@ -30,7 +38,7 @@ const Switch = () => {
 
 const StyledWrapper = styled.div`
   .theme-switch {
-    --toggle-size: 30px;
+    --toggle-size: 15px;
     --container-width: 5.625em;
     --container-height: 2.5em;
     --container-radius: 6.25em;
@@ -64,10 +72,7 @@ const StyledWrapper = styled.div`
     border-radius: var(--container-radius);
     overflow: hidden;
     cursor: pointer;
-    -webkit-box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25), 0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
     box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25), 0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
     transition: var(--transition);
     position: relative;
   }
@@ -77,7 +82,6 @@ const StyledWrapper = styled.div`
     position: absolute;
     z-index: 1;
     inset: 0;
-    -webkit-box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset, 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
     box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset, 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
     border-radius: var(--container-radius);
   }
@@ -94,13 +98,8 @@ const StyledWrapper = styled.div`
     left: var(--circle-container-offset);
     top: var(--circle-container-offset);
     border-radius: var(--container-radius);
-    -webkit-box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), 0 0 0 0.625em rgba(255, 255, 255, 0.1), 0 0 0 1.25em rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), inset 0 0 0 3.375em rgba(255, 255, 255, 0.1), 0 0 0 0.625em rgba(255, 255, 255, 0.1), 0 0 0 1.25em rgba(255, 255, 255, 0.1);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-transition: var(--circle-transition);
-    -o-transition: var(--circle-transition);
     transition: var(--circle-transition);
     pointer-events: none;
   }
@@ -114,28 +113,19 @@ const StyledWrapper = styled.div`
     margin: auto;
     border-radius: var(--container-radius);
     background-color: var(--sun-bg);
-    -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #a1872a inset;
     box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #a1872a inset;
-    -webkit-filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25)) drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25)) drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
     overflow: hidden;
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
     transition: var(--transition);
   }
 
   .theme-switch__moon {
-    -webkit-transform: translateX(100%);
-    -ms-transform: translateX(100%);
     transform: translateX(100%);
     width: 100%;
     height: 100%;
     background-color: var(--moon-bg);
     border-radius: inherit;
-    -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #969696 inset;
     box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset, 0em -0.062em 0.062em 0em #969696 inset;
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
     transition: var(--transition);
     position: relative;
   }
@@ -148,7 +138,6 @@ const StyledWrapper = styled.div`
     height: 0.75em;
     border-radius: var(--container-radius);
     background-color: var(--spot-color);
-    -webkit-box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
     box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
   }
 
@@ -174,10 +163,7 @@ const StyledWrapper = styled.div`
     position: absolute;
     bottom: -0.625em;
     left: 0.312em;
-    -webkit-box-shadow: 0.937em 0.312em var(--clouds-color), -0.312em -0.312em var(--back-clouds-color), 1.437em 0.375em var(--clouds-color), 0.5em -0.125em var(--back-clouds-color), 2.187em 0 var(--clouds-color), 1.25em -0.062em var(--back-clouds-color), 2.937em 0.312em var(--clouds-color), 2em -0.312em var(--back-clouds-color), 3.625em -0.062em var(--clouds-color), 2.625em 0em var(--back-clouds-color), 4.5em -0.312em var(--clouds-color), 3.375em -0.437em var(--back-clouds-color), 4.625em -1.75em 0 0.437em var(--clouds-color), 4em -0.625em var(--back-clouds-color), 4.125em -2.125em 0 0.437em var(--back-clouds-color);
     box-shadow: 0.937em 0.312em var(--clouds-color), -0.312em -0.312em var(--back-clouds-color), 1.437em 0.375em var(--clouds-color), 0.5em -0.125em var(--back-clouds-color), 2.187em 0 var(--clouds-color), 1.25em -0.062em var(--back-clouds-color), 2.937em 0.312em var(--clouds-color), 2em -0.312em var(--back-clouds-color), 3.625em -0.062em var(--clouds-color), 2.625em 0em var(--back-clouds-color), 4.5em -0.312em var(--clouds-color), 3.375em -0.437em var(--back-clouds-color), 4.625em -1.75em 0 0.437em var(--clouds-color), 4em -0.625em var(--back-clouds-color), 4.125em -2.125em 0 0.437em var(--back-clouds-color);
-    -webkit-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-    -o-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
     transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
   }
 
@@ -188,8 +174,6 @@ const StyledWrapper = styled.div`
     left: 0.312em;
     width: 2.75em;
     height: auto;
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
     transition: var(--transition);
   }
 
@@ -210,8 +194,6 @@ const StyledWrapper = styled.div`
   }
 
   .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__moon {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
     transform: translate(0);
   }
 
@@ -221,8 +203,6 @@ const StyledWrapper = styled.div`
 
   .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__stars-container {
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 `;
