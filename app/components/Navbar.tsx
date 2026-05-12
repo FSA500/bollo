@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react'
-import Switch from '@/components/ui/sky-toggle'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -16,7 +15,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-bollo-bg/90 dark:bg-forest-deep/95 backdrop-blur-md border-b border-mint/20 shadow-sm'
+          ? 'bg-bollo-bg/90 backdrop-blur-md border-b border-mint/20 shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -42,33 +41,29 @@ export default function Navbar() {
           <a href="/kontakt"               className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>Kontakt</a>
         </div>
 
-        {/* Right side: CTA + toggle + mobile menu */}
-        <div className="flex items-center gap-3">
-          <a href="/kontakt" className="btn-primary hidden md:inline-flex text-sm py-3 px-6 cta-trigger">
-            Book en demo
-          </a>
+        {/* CTA */}
+        <a href="/kontakt" className="btn-primary hidden md:inline-flex text-sm py-3 px-6 cta-trigger">
+          Book en demo
+        </a>
 
-          <Switch />
-
-          {/* Mobile menu button */}
-          <button
-            className={`md:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-forest' : 'text-white'}`}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {menuOpen
-                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              }
-            </svg>
-          </button>
-        </div>
+        {/* Mobile menu button */}
+        <button
+          className={`md:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-forest' : 'text-white'}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {menuOpen
+              ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            }
+          </svg>
+        </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-bollo-bg dark:bg-forest-deep border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bollo-text-soft dark:text-white/70">
+        <div className="md:hidden bg-bollo-bg border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bollo-text-soft">
           <a href="/reputation-management" onClick={() => setMenuOpen(false)} className="hover:text-forest">Ydelser</a>
           <a href="/ai-synlighed"          onClick={() => setMenuOpen(false)} className="hover:text-forest">AI-synlighed</a>
           <a href="/brancher"              onClick={() => setMenuOpen(false)} className="hover:text-forest">Brancher</a>
