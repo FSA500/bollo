@@ -17,8 +17,8 @@
   --color-surface:        #ffffff;
   --color-text:           #0D1127;
   --color-text-soft:      #546373;
-  --color-text-muted-dark: rgba(255, 255, 255, 0.65);
-  --color-text-on-dark:   rgba(255, 255, 255, 0.85);
+  --color-text-muted-dark: rgba(255, 255, 255, 0.82);
+  --color-text-on-dark:   rgba(255, 255, 255, 0.92);
   --color-border:         #e0e0e8;
   --color-border-mint:    rgba(40, 231, 196, 0.2);
   --color-gray-50:        #f7f7f6;
@@ -189,7 +189,7 @@ body {
 
   .section-sub {
     font-size: 1rem;
-    color: rgba(13, 17, 39, 0.62);
+    color: #3d4f62;
     line-height: 1.7;
     max-width: 600px;
     margin-bottom: 40px;

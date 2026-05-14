@@ -90,7 +90,7 @@ export default function HowItWorks() {
                   {s.icon}
                   <h3 className="font-bold text-forest text-base">{s.title}</h3>
                 </div>
-                <p className="text-forest/70 text-sm leading-relaxed">{s.text}</p>
+                <p className="text-forest/90 text-sm leading-relaxed">{s.text}</p>
               </div>
             </div>
           ))}

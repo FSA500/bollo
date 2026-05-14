@@ -14,7 +14,7 @@ export default function CtaSection() {
           Klar til et stærkere omdømme?
         </h2>
 
-        <p className="text-white/65 text-lg leading-relaxed mb-10">
+        <p className="text-white/88 text-lg leading-relaxed mb-10">
           Book en uforpligtende demo og se præcis, hvad Bollo kan gøre for din virksomhed.
           Ingen binding, ingen skjulte omkostninger.
         </p>
@@ -28,7 +28,7 @@ export default function CtaSection() {
           </a>
         </div>
 
-        <p className="text-white/35 text-xs mt-8">
+        <p className="text-white/62 text-xs mt-8">
           Typisk svar inden for 24 timer · Ingen bindingsperiode
         </p>
       </div>
