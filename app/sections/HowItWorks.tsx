@@ -63,7 +63,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="hvordan" className="bg-mint-light py-20 px-6 md:px-12">
+    <section id="hvordan" className="bg-white py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
 
         <div className="section-tag">Sådan virker det</div>

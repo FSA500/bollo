@@ -180,7 +180,7 @@ export default function CasesPage() {
                           </div>
                           <div
                             className="rounded-xl p-5"
-                            style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(109,203,160,0.3)' }}
+                            style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(40,231,196,0.3)' }}
                           >
                             <div
                               className="font-bold mb-3"

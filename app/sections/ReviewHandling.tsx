@@ -49,13 +49,13 @@ const features = [
 ]
 
 const StarFilled = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="#F5C518" stroke="none">
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="#28E7C4" stroke="none">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 )
 
 const StarEmpty = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="#d1d5db" stroke="none">
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="#9CA9B9" stroke="none">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 )
@@ -92,7 +92,7 @@ export default function ReviewHandling() {
             {/* Positive review example */}
             <div className="bollo-card">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-mint-light flex items-center justify-center text-sm font-bold text-forest">MJ</div>
+                <div className="w-8 h-8 rounded-full bg-mint/20 flex items-center justify-center text-sm font-bold text-forest">MJ</div>
                 <div>
                   <div className="text-xs font-bold text-forest">Mette Jensen</div>
                   <div className="text-xs text-bollo-text-soft flex items-center gap-1">
@@ -106,7 +106,7 @@ export default function ReviewHandling() {
               <p className="text-xs text-bollo-text-soft mb-3 leading-relaxed">
                 "Fantastisk service og super hurtig levering. Vil bestemt anbefale!"
               </p>
-              <div className="bg-mint-light rounded-lg p-3 border-l-2 border-mint">
+              <div className="bg-mint/10 rounded-lg p-3 border-l-2 border-mint">
                 <div className="text-xs font-bold text-forest mb-1">Svar fra virksomheden · Bollo</div>
                 <p className="text-xs text-bollo-text-soft leading-relaxed">
                   "Mange tak, Mette! Det glæder os meget at høre. Vi sætter stor pris på din anmeldelse og ser frem til at hjælpe dig igen!"
@@ -131,7 +131,7 @@ export default function ReviewHandling() {
               <p className="text-xs text-bollo-text-soft mb-3 leading-relaxed">
                 "Oplevede forsinkelse i leveringen og ingen svar på min henvendelse."
               </p>
-              <div className="bg-orange-50 rounded-lg p-3 border-l-2 border-coral">
+              <div className="bg-coral/10 rounded-lg p-3 border-l-2 border-coral">
                 <div className="text-xs font-bold text-forest mb-1">Svar fra virksomheden · Bollo</div>
                 <p className="text-xs text-bollo-text-soft leading-relaxed">
                   "Hej Thomas, vi beklager din oplevelse. Vi kontakter dig direkte for at finde en løsning. Det er ikke den standard, vi stræber efter."

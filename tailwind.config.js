@@ -9,8 +9,12 @@ module.exports = {
       colors: {
         mint: {
           DEFAULT: '#28E7C4',
-          light:   '#e0fdf8',
+          light:   'rgba(40,231,196,0.12)',
           dark:    '#1bc5a8',
+        },
+        neon: {
+          DEFAULT: '#06FF89',
+          dark:    '#00de70',
         },
         forest: {
           DEFAULT: '#0D1127',
@@ -22,7 +26,7 @@ module.exports = {
         },
         bollo: {
           bg:             '#f4f4f6',
-          'bg-gray':      '#ededf0',
+          'bg-gray':      '#e6e6e6',
           surface:        '#ffffff',
           'surface-gray': '#f7f7f8',
           text:           '#0D1127',
