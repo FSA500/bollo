@@ -13,12 +13,12 @@ export default function AiSection() {
               I 2026 søger dine kunder<br />
               via <em className="not-italic text-mint">AI-værktøjer</em>
             </h2>
-            <p className="text-white/88 text-base leading-relaxed mb-6">
+            <p className="text-white text-base leading-relaxed mb-6">
               Flere og flere kunder stiller spørgsmål direkte til AI-assistenter i stedet
               for at bruge klassiske Google-søgninger. Disse AI-systemer anbefaler
               virksomheder baseret på online omdømme, anmeldelser og digital troværdighed.
             </p>
-            <p className="text-white/88 text-base leading-relaxed mb-8">
+            <p className="text-white text-base leading-relaxed mb-8">
               Bollo hjælper dig med at opbygge det digitale fundament, der sikrer, at
               din virksomhed bliver anbefalet og fundet — både i dag og i fremtiden.
             </p>
@@ -80,11 +80,11 @@ export default function AiSection() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl p-5 border border-mint/20 bg-white/5"
+                className="rounded-2xl p-5 border border-mint/30 bg-white/10"
               >
                 <div className="mb-3">{item.icon}</div>
                 <h3 className="font-bold text-white text-sm mb-2">{item.title}</h3>
-                <p className="text-white/82 text-xs leading-relaxed">{item.text}</p>
+                <p className="text-white text-xs leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>
