@@ -52,33 +52,33 @@ export default function Mascot() {
   }, [])
 
   return (
-    <div className="fixed bottom-8 right-6 z-50 flex flex-col items-center pointer-events-none select-none">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end pointer-events-none select-none">
 
       {/* Idle / cheer speech bubble */}
       <div
-        className={`relative bg-white rounded-[14px_14px_14px_4px] px-3 py-2 text-xs font-semibold text-forest shadow-lg mb-2 max-w-[150px] text-center leading-snug border border-mint/20 transition-all duration-300 ${
+        className={`relative bg-forest text-white rounded-[14px_14px_4px_14px] px-3 py-2 text-xs font-semibold shadow-lg mb-2 max-w-[150px] text-center leading-snug border border-mint/20 transition-all duration-300 ${
           showBubble ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95 pointer-events-none'
         }`}
       >
         {bubble}
-        <span className="absolute -bottom-[7px] left-3 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-white" />
+        <span className="absolute -bottom-[7px] right-3 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-forest" />
       </div>
 
-      {/* Permanent CTA label */}
+      {/* Permanent CTA label — hidden on mobile to avoid blocking content */}
       <a
         href="/kontakt"
-        className={`relative pointer-events-auto bg-forest text-white rounded-[14px_14px_14px_4px] px-3 py-2 text-xs font-semibold shadow-lg mb-2 max-w-[160px] text-center leading-snug border border-mint/20 transition-all duration-300 ${
+        className={`relative pointer-events-auto bg-neon text-forest font-bold rounded-[14px_14px_4px_14px] px-3 py-2 text-xs shadow-lg mb-2 max-w-[160px] text-center leading-snug transition-all duration-300 hidden sm:block ${
           showBubble ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
         }`}
       >
         Book en uforpligtende snak
-        <span className="absolute -bottom-[7px] left-3 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-forest" />
+        <span className="absolute -bottom-[7px] right-3 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-neon" />
       </a>
 
       {/* Mascot container */}
       <a
         href="/kontakt"
-        className={`w-28 h-28 rounded-full overflow-hidden drop-shadow-xl pointer-events-auto cursor-pointer ${
+        className={`w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden drop-shadow-xl pointer-events-auto cursor-pointer ${
           cheering ? 'animate-cheer' : 'animate-float'
         }`}
         aria-label="Gå til kontakt"

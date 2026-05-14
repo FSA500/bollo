@@ -16,7 +16,7 @@
   --color-bg:             #f4f4f6;
   --color-surface:        #ffffff;
   --color-text:           #0D1127;
-  --color-text-soft:      #9CA9B9;
+  --color-text-soft:      #546373;
   --color-text-muted-dark: rgba(255, 255, 255, 0.65);
   --color-text-on-dark:   rgba(255, 255, 255, 0.85);
   --color-border:         #e0e0e8;
@@ -189,7 +189,7 @@ body {
 
   .section-sub {
     font-size: 1rem;
-    color: var(--color-text-soft);
+    color: rgba(13, 17, 39, 0.62);
     line-height: 1.7;
     max-width: 600px;
     margin-bottom: 40px;

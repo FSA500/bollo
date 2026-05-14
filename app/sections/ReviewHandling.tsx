@@ -81,7 +81,7 @@ export default function ReviewHandling() {
               {features.map((f, i) => (
                 <li key={i} className="flex items-start gap-3 bg-bollo-bg-gray rounded-xl px-4 py-3">
                   {f.icon}
-                  <span className="text-bollo-text-soft text-sm leading-relaxed">{f.text}</span>
+                  <span className="text-forest/75 text-sm leading-relaxed">{f.text}</span>
                 </li>
               ))}
             </ul>
@@ -103,12 +103,12 @@ export default function ReviewHandling() {
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-bollo-text-soft mb-3 leading-relaxed">
+              <p className="text-xs text-forest/70 mb-3 leading-relaxed">
                 "Fantastisk service og super hurtig levering. Vil bestemt anbefale!"
               </p>
               <div className="bg-mint/10 rounded-lg p-3 border-l-2 border-mint">
                 <div className="text-xs font-bold text-forest mb-1">Svar fra virksomheden · Bollo</div>
-                <p className="text-xs text-bollo-text-soft leading-relaxed">
+                <p className="text-xs text-forest/70 leading-relaxed">
                   "Mange tak, Mette! Det glæder os meget at høre. Vi sætter stor pris på din anmeldelse og ser frem til at hjælpe dig igen!"
                 </p>
               </div>
@@ -128,12 +128,12 @@ export default function ReviewHandling() {
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-bollo-text-soft mb-3 leading-relaxed">
+              <p className="text-xs text-forest/70 mb-3 leading-relaxed">
                 "Oplevede forsinkelse i leveringen og ingen svar på min henvendelse."
               </p>
               <div className="bg-coral/10 rounded-lg p-3 border-l-2 border-coral">
                 <div className="text-xs font-bold text-forest mb-1">Svar fra virksomheden · Bollo</div>
-                <p className="text-xs text-bollo-text-soft leading-relaxed">
+                <p className="text-xs text-forest/70 leading-relaxed">
                   "Hej Thomas, vi beklager din oplevelse. Vi kontakter dig direkte for at finde en løsning. Det er ikke den standard, vi stræber efter."
                 </p>
               </div>
