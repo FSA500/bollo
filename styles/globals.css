@@ -14,7 +14,7 @@
   --color-bg:             #f4f4f6;
   --color-surface:        #ffffff;
   --color-text:           #0D1127;
-  --color-text-soft:      #9CA9B9;
+  --color-text-soft:      #5C6C7E;
   --color-text-muted-dark: rgba(255, 255, 255, 0.65);
   --color-text-on-dark:   rgba(255, 255, 255, 0.85);
   --color-border:         #e0e0e8;
@@ -53,6 +53,12 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* ── Keyframes (outside @layer so they're globally available) ── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50%       { opacity: 0.85; transform: scale(1.18); }
 }
 
 /* ── Reusable component classes ── */
@@ -99,35 +105,52 @@ body {
     color: #fff;
   }
 
-  /* Section tag / label */
+  /* Section tag — editorial line + label style */
   .section-tag {
-    display: inline-block;
-    background: var(--color-mint-light);
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
     color: var(--color-mint-dark);
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: var(--radius-full);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+  }
+  .section-tag::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
   }
 
   /* Section tag on dark bg */
   .section-tag-dark {
-    display: inline-block;
-    background: rgba(109, 203, 160, 0.18);
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
     color: var(--color-mint);
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: var(--radius-full);
-    margin-bottom: 16px;
-    border: 1px solid rgba(109, 203, 160, 0.25);
+    margin-bottom: 18px;
+  }
+  .section-tag-dark::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
   }
 
   /* Cards */
@@ -136,12 +159,12 @@ body {
     border-radius: var(--radius-lg);
     padding: 24px;
     border: 1px solid var(--color-gray-200);
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .bollo-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.09), 0 0 0 1px rgba(40, 231, 196, 0.14);
   }
 
   /* Section divider */
@@ -166,21 +189,21 @@ body {
   /* Section headings */
   .section-h2 {
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-size: clamp(1.65rem, 3.2vw, 2.35rem);
     font-weight: 800;
     color: var(--color-forest);
-    letter-spacing: -0.025em;
-    line-height: 1.15;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
     margin-bottom: 14px;
   }
 
   .section-h2-dark {
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-size: clamp(1.65rem, 3.2vw, 2.35rem);
     font-weight: 800;
     color: #fff;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
     margin-bottom: 14px;
   }
 
@@ -198,12 +221,30 @@ body {
     position: relative;
     overflow: hidden;
   }
+
+  /* Dot grid */
   .section-dark::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(40,231,196,0.06) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background-image: radial-gradient(circle, rgba(40,231,196,0.04) 1px, transparent 1px);
+    background-size: 38px 38px;
     pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Ambient glow orb — top-right corner */
+  .section-dark::after {
+    content: '';
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(40, 231, 196, 0.07) 0%, transparent 65%);
+    top: -160px;
+    right: -160px;
+    pointer-events: none;
+    z-index: 0;
+    animation: glow-pulse 8s ease-in-out infinite;
   }
 }

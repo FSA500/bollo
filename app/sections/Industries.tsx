@@ -1,3 +1,11 @@
+'use client'
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
+
 const industries = [
   {
     icon: (
@@ -59,22 +67,46 @@ const industries = [
 ]
 
 export default function Industries() {
+  const container = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    gsap.from('.ind-heading', {
+      opacity: 0,
+      y: 24,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.ind-heading', start: 'top 85%' },
+    })
+
+    gsap.from('.ind-card', {
+      opacity: 0,
+      y: 28,
+      scale: 0.95,
+      duration: 0.5,
+      ease: 'power2.out',
+      stagger: 0.07,
+      scrollTrigger: { trigger: '.ind-cards', start: 'top 82%' },
+    })
+  }, { scope: container })
+
   return (
-    <section id="brancher" className="bg-bollo-bg-gray py-20 px-6 md:px-12">
+    <section ref={container} id="brancher" className="bg-bollo-bg-gray py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto text-center">
 
-        <div className="section-tag mx-auto" style={{ display: 'inline-block' }}>Brancher</div>
-        <h2 className="section-h2">Vi hjælper både små og store virksomheder</h2>
-        <p className="section-sub mx-auto text-center">
-          Uanset om du driver en lokal butik eller en kæde med mange lokationer,
-          er Bollo skaleret til at passe din virksomhed.
-        </p>
+        <div className="ind-heading">
+          <div className="section-tag mx-auto">Brancher</div>
+          <h2 className="section-h2">Vi hjælper både små og store virksomheder</h2>
+          <p className="section-sub mx-auto text-center">
+            Uanset om du driver en lokal butik eller en kæde med mange lokationer,
+            er Bollo skaleret til at passe din virksomhed.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="ind-cards grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {industries.map((ind, i) => (
             <div
               key={i}
-              className="bollo-card text-center flex flex-col items-center gap-3 py-6"
+              className="ind-card bollo-card text-center flex flex-col items-center gap-3 py-6"
             >
               {ind.icon}
               <span className="text-xs font-semibold text-forest leading-tight">{ind.label}</span>

@@ -1,3 +1,11 @@
+'use client'
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
+
 const features = [
   {
     icon: (
@@ -61,14 +69,35 @@ const StarEmpty = () => (
 )
 
 export default function ReviewHandling() {
+  const container = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    gsap.from('.rh-left', {
+      opacity: 0,
+      x: -30,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.rh-left', start: 'top 80%' },
+    })
+
+    gsap.from('.rh-card', {
+      opacity: 0,
+      x: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.15,
+      scrollTrigger: { trigger: '.rh-cards', start: 'top 80%' },
+    })
+  }, { scope: container })
+
   return (
-    <section className="bg-bollo-surface-gray py-20 px-6 md:px-12">
+    <section ref={container} className="bg-bollo-surface-gray py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* Left */}
-          <div>
+          <div className="rh-left">
             <div className="section-tag">Vi svarer for dig</div>
             <h2 className="section-h2">
               Et professionelt team<br />bag hvert eneste svar
@@ -87,10 +116,11 @@ export default function ReviewHandling() {
             </ul>
           </div>
 
-          {/* Right — visual card mockup */}
-          <div className="flex flex-col gap-4">
-            {/* Positive review example */}
-            <div className="bollo-card">
+          {/* Right — review card mockups */}
+          <div className="rh-cards flex flex-col gap-4">
+
+            {/* Positive review */}
+            <div className="rh-card bollo-card">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 rounded-full bg-mint-light flex items-center justify-center text-sm font-bold text-forest">MJ</div>
                 <div>
@@ -114,8 +144,8 @@ export default function ReviewHandling() {
               </div>
             </div>
 
-            {/* Negative review example */}
-            <div className="bollo-card">
+            {/* Negative review */}
+            <div className="rh-card bollo-card">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-8 h-8 rounded-full bg-coral/10 flex items-center justify-center text-sm font-bold text-coral">TP</div>
                 <div>
@@ -138,6 +168,7 @@ export default function ReviewHandling() {
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>

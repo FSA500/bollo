@@ -1,9 +1,30 @@
-export default function CtaSection() {
-  return (
-    <section id="kontakt" className="section-dark py-24 px-6 md:px-12 text-center">
-      <div className="relative z-10 max-w-2xl mx-auto">
+'use client'
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 
-        <div className="section-tag-dark mx-auto mb-6" style={{ display: 'inline-block' }}>
+gsap.registerPlugin(ScrollTrigger, useGSAP)
+
+export default function CtaSection() {
+  const container = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    gsap.from('.cta-content > *', {
+      opacity: 0,
+      y: 24,
+      duration: 0.65,
+      ease: 'power2.out',
+      stagger: 0.12,
+      scrollTrigger: { trigger: '.cta-content', start: 'top 80%' },
+    })
+  }, { scope: container })
+
+  return (
+    <section ref={container} id="kontakt" className="section-dark py-24 px-6 md:px-12 text-center">
+      <div className="relative z-10 max-w-2xl mx-auto cta-content">
+
+        <div className="section-tag-dark mx-auto mb-6">
           Kom i gang i dag
         </div>
 

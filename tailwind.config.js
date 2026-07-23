@@ -26,7 +26,7 @@ module.exports = {
           surface:        '#ffffff',
           'surface-gray': '#f7f7f8',
           text:           '#0D1127',
-          'text-soft':    '#9CA9B9',
+          'text-soft':    '#5C6C7E',
           border:         '#e0e0e8',
           'border-gray':  '#e4e4e3',
         },

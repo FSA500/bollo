@@ -1,3 +1,11 @@
+'use client'
+import { useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
+
 const points = [
   {
     icon: (
@@ -44,14 +52,10 @@ const points = [
       <svg className="w-5 h-5 text-forest" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="4" width="16" height="16" rx="2"/>
         <rect x="9" y="9" width="6" height="6"/>
-        <line x1="9" y1="1" x2="9" y2="4"/>
-        <line x1="15" y1="1" x2="15" y2="4"/>
-        <line x1="9" y1="20" x2="9" y2="23"/>
-        <line x1="15" y1="20" x2="15" y2="23"/>
-        <line x1="20" y1="9" x2="23" y2="9"/>
-        <line x1="20" y1="14" x2="23" y2="14"/>
-        <line x1="1" y1="9" x2="4" y2="9"/>
-        <line x1="1" y1="14" x2="4" y2="14"/>
+        <line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/>
+        <line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/>
+        <line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/>
+        <line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
       </svg>
     ),
     title: 'AI-søgninger bruger dit omdømme som anbefaling',
@@ -60,20 +64,45 @@ const points = [
 ]
 
 export default function WhyReviews() {
+  const container = useRef<HTMLElement>(null)
+
+  useGSAP(() => {
+    gsap.from('.wr-heading', {
+      opacity: 0,
+      y: 28,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.wr-heading', start: 'top 85%' },
+    })
+
+    gsap.from('.wr-card', {
+      opacity: 0,
+      y: 36,
+      duration: 0.65,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: '.wr-cards', start: 'top 80%' },
+    })
+  }, { scope: container })
+
   return (
-    <section id="ydelser" className="bg-bollo-surface-gray py-20 px-6 md:px-12">
+    <section ref={container} id="ydelser" className="bg-bollo-surface-gray py-20 px-6 md:px-12">
       <div className="max-w-[1100px] mx-auto">
 
-        <div className="section-tag">Hvorfor anmeldelser</div>
-        <h2 className="section-h2">Anmeldelser er ikke bare stjerner —<br />de er tillid, synlighed og salg</h2>
-        <p className="section-sub">
-          De fleste virksomheder ved godt, at anmeldelser er vigtige.
-          Men de færreste har tid, systemer eller ressourcer til at håndtere dem ordentligt.
-        </p>
+        <div className="wr-heading">
+          <div className="section-tag">Hvorfor anmeldelser</div>
+          <h2 className="section-h2">
+            Anmeldelser er ikke bare stjerner —<br />de er tillid, synlighed og salg
+          </h2>
+          <p className="section-sub">
+            De fleste virksomheder ved godt, at anmeldelser er vigtige.
+            Men de færreste har tid, systemer eller ressourcer til at håndtere dem ordentligt.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="wr-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {points.map((p, i) => (
-            <div key={i} className="bollo-card">
+            <div key={i} className="wr-card bollo-card">
               <div className="card-icon">{p.icon}</div>
               <h3 className="font-bold text-forest text-base mb-2">{p.title}</h3>
               <p className="text-bollo-text-soft text-sm leading-relaxed">{p.text}</p>
