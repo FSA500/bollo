@@ -165,6 +165,7 @@ export default function AiSynlighedPage() {
               {aiTools.map((t, i) => (
                 <div
                   key={i}
+                  data-anim-box
                   className="rounded-xl p-6 text-left"
                   style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(40,231,196,0.2)' }}
                 >

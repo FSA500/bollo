@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
+import GlobalAnimations from './components/GlobalAnimations'
 
 export const metadata: Metadata = {
   title: 'Bollo — Reputation Management',
@@ -23,6 +24,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body bg-bollo-bg text-bollo-text antialiased">
+        <GlobalAnimations />
         {children}
       </body>
     </html>

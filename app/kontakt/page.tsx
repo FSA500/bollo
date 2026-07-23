@@ -1,9 +1,13 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Mascot from '../components/Mascot'
+
+gsap.registerPlugin(useGSAP)
 
 const faqs = [
   {
@@ -69,6 +73,7 @@ const contactItems = [
 ]
 
 export default function KontaktPage() {
+  const heroRef = useRef<HTMLElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
     name: '',
@@ -79,6 +84,13 @@ export default function KontaktPage() {
     type: 'demo',
   })
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+    tl.from('.kh-tag',   { opacity: 0, x: -16, duration: 0.5,  delay: 0.25 })
+      .from('.kh-title', { opacity: 0, y: 30,  duration: 0.75 }, '-=0.15')
+      .from('.kh-sub',   { opacity: 0, y: 18,  duration: 0.6  }, '-=0.45')
+  }, { scope: heroRef })
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -91,6 +103,7 @@ export default function KontaktPage() {
       <main>
         {/* Hero */}
         <section
+          ref={heroRef}
           style={{
             background: 'linear-gradient(135deg, var(--color-forest-deep) 0%, var(--color-forest) 60%, #1a0d5e 100%)',
             position: 'relative',
@@ -109,14 +122,14 @@ export default function KontaktPage() {
             }}
           />
           <div className="relative z-10 max-w-2xl mx-auto text-center">
-            <span className="section-tag-dark">Kontakt</span>
+            <span className="kh-tag no-global-anim section-tag-dark">Kontakt</span>
             <h1
-              className="font-display font-extrabold text-white mt-4 mb-6"
+              className="kh-title font-display font-extrabold text-white mt-4 mb-6"
               style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', lineHeight: 1.2 }}
             >
               Lad os tage en snak
             </h1>
-            <p style={{ color: 'var(--color-text-muted-dark)', fontSize: 'var(--text-md)', fontFamily: 'var(--font-body)', lineHeight: 1.7 }}>
+            <p className="kh-sub" style={{ color: 'var(--color-text-muted-dark)', fontSize: 'var(--text-md)', fontFamily: 'var(--font-body)', lineHeight: 1.7 }}>
               Book en gratis og uforpligtende demo, og se hvad Bollo konkret kan gøre for din virksomhed.
             </p>
           </div>
