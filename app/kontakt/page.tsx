@@ -92,7 +92,7 @@ export default function KontaktPage() {
         {/* Hero */}
         <section
           style={{
-            background: 'linear-gradient(135deg, var(--color-forest-deep) 0%, var(--color-forest) 60%, #1f5045 100%)',
+            background: 'linear-gradient(135deg, var(--color-forest-deep) 0%, var(--color-forest) 60%, #1a0d5e 100%)',
             position: 'relative',
             overflow: 'hidden',
           }}
@@ -103,7 +103,7 @@ export default function KontaktPage() {
             style={{
               position: 'absolute',
               inset: 0,
-              backgroundImage: 'radial-gradient(circle, rgba(109,203,160,0.10) 1px, transparent 1px)',
+              backgroundImage: 'radial-gradient(circle, rgba(40,231,196,0.10) 1px, transparent 1px)',
               backgroundSize: '32px 32px',
               pointerEvents: 'none',
             }}
@@ -367,7 +367,7 @@ export default function KontaktPage() {
 
               <div
                 className="rounded-xl p-6"
-                style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(109,203,160,0.3)' }}
+                style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(40,231,196,0.3)' }}
               >
                 <div style={{ marginBottom: '12px' }}><GiftIcon /></div>
                 <h4
@@ -446,7 +446,7 @@ export default function KontaktPage() {
                   {openFaq === i && (
                     <div
                       className="px-6 pb-5"
-                      style={{ background: 'var(--color-mint-light)', borderTop: '1px solid rgba(109,203,160,0.2)' }}
+                      style={{ background: 'var(--color-mint-light)', borderTop: '1px solid rgba(40,231,196,0.2)' }}
                     >
                       <p style={{ color: 'var(--color-text)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-base)', lineHeight: 1.8, paddingTop: '12px' }}>
                         {faq.a}

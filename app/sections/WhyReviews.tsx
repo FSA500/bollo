@@ -105,7 +105,7 @@ export default function WhyReviews() {
             <div key={i} className="wr-card bollo-card">
               <div className="card-icon">{p.icon}</div>
               <h3 className="font-bold text-forest text-base mb-2">{p.title}</h3>
-              <p className="text-bollo-text-soft text-sm leading-relaxed">{p.text}</p>
+              <p className="text-forest/90 text-sm leading-relaxed">{p.text}</p>
             </div>
           ))}
         </div>

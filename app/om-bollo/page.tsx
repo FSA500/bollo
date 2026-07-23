@@ -184,7 +184,7 @@ export default function OmBolloPage() {
                         top: '44px',
                         bottom: 0,
                         width: '2px',
-                        background: 'rgba(109,203,160,0.25)',
+                        background: 'rgba(40,231,196,0.25)',
                       }}
                     />
                   )}
@@ -193,8 +193,8 @@ export default function OmBolloPage() {
                     style={{
                       width: '54px',
                       height: '54px',
-                      background: 'rgba(109,203,160,0.15)',
-                      border: '2px solid rgba(109,203,160,0.4)',
+                      background: 'rgba(40,231,196,0.15)',
+                      border: '2px solid rgba(40,231,196,0.4)',
                       fontFamily: 'var(--font-display)',
                       color: 'var(--color-mint)',
                       fontSize: 'var(--text-xs)',

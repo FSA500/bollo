@@ -32,7 +32,7 @@ export default function Navbar() {
 
         {/* Desktop nav links */}
         <div className={`hidden md:flex items-center gap-8 text-sm font-medium transition-colors duration-300 ${
-          scrolled ? 'text-bollo-text-soft' : 'text-white/80'
+          scrolled ? 'text-forest/70' : 'text-white/80'
         }`}>
           <a href="/reputation-management" className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>Ydelser</a>
           <a href="/ai-synlighed"          className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>AI-synlighed</a>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-bollo-bg border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-bollo-text-soft">
+        <div className="md:hidden bg-bollo-bg border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-forest/75">
           <a href="/reputation-management" onClick={() => setMenuOpen(false)} className="hover:text-forest">Ydelser</a>
           <a href="/ai-synlighed"          onClick={() => setMenuOpen(false)} className="hover:text-forest">AI-synlighed</a>
           <a href="/brancher"              onClick={() => setMenuOpen(false)} className="hover:text-forest">Brancher</a>

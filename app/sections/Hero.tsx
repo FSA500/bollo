@@ -52,7 +52,7 @@ export default function Hero() {
           </h1>
 
           {/* Subtext */}
-          <p className="hero-sub text-white/70 text-lg leading-relaxed mb-10 max-w-xl">
+          <p className="hero-sub text-white/88 text-lg leading-relaxed mb-10 max-w-xl">
             Bollo hjælper virksomheder med professionel Reputation Management på
             Trustpilot, Google Maps og TripAdvisor — så du kan fokusere på din drift,
             mens vi sikrer et stærkere omdømme.
@@ -69,7 +69,7 @@ export default function Hero() {
           </div>
 
           {/* Stats bar */}
-          <div className="grid grid-cols-3 divide-x divide-mint/20 border border-mint/20 rounded-2xl overflow-hidden bg-white/5 max-w-lg">
+          <div className="grid grid-cols-3 divide-x divide-mint/30 border border-mint/30 rounded-2xl overflow-hidden bg-white/10 max-w-lg">
             {[
               { value: 'Top 5', label: 'Google Maps\nefter 6 mdr.' },
               { value: '3x',    label: 'Flere\nanmeldelser' },
@@ -77,7 +77,7 @@ export default function Hero() {
             ].map((stat, i) => (
               <div key={i} className="hero-stat px-6 py-5 text-center">
                 <div className="font-display font-black text-mint text-2xl">{stat.value}</div>
-                <div className="text-white/50 text-xs mt-1 leading-tight whitespace-pre-line">
+                <div className="text-white text-xs mt-1 leading-tight whitespace-pre-line">
                   {stat.label}
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function Hero() {
           </div>
 
           {/* Platforms */}
-          <p className="hero-platforms text-white/38 text-xs mt-6 tracking-widest uppercase">
+          <p className="hero-platforms text-white/80 text-xs mt-6 tracking-wide uppercase">
             Vi arbejder på · Google Maps · Trustpilot · TripAdvisor
           </p>
         </div>

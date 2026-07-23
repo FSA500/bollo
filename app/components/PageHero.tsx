@@ -34,7 +34,7 @@ export default function PageHero({
   return (
     <section
       style={{
-        background: 'linear-gradient(135deg, var(--color-forest-deep) 0%, var(--color-forest) 60%, #1f5045 100%)',
+        background: 'linear-gradient(135deg, var(--color-forest-deep) 0%, var(--color-forest) 60%, #1a0d5e 100%)',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -46,7 +46,7 @@ export default function PageHero({
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'radial-gradient(circle, rgba(109,203,160,0.10) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(40,231,196,0.10) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           pointerEvents: 'none',
         }}

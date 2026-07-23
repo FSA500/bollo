@@ -173,7 +173,7 @@ export default function GoogleMapsOptimeringPage() {
                 <div
                   key={i}
                   className="rounded-xl p-6"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(109,203,160,0.2)' }}
+                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(40,231,196,0.2)' }}
                 >
                   <div
                     className="font-extrabold mb-3"

@@ -189,7 +189,7 @@ export default function BrancherPage() {
                     </div>
                     <div
                       className="rounded-lg px-4 py-3 flex gap-3 items-start"
-                      style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(109,203,160,0.2)' }}
+                      style={{ background: 'var(--color-mint-light)', border: '1px solid rgba(40,231,196,0.2)' }}
                     >
                       <span style={{ color: 'var(--color-mint-dark)', fontWeight: 700, fontSize: 'var(--text-xs)', fontFamily: 'var(--font-body)', whiteSpace: 'nowrap' }}>
                         LØSNING

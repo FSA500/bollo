@@ -5,8 +5,10 @@
 /* ── Bollo CSS Variables ── */
 :root {
   --color-mint:           #28E7C4;
-  --color-mint-light:     #e0fdf8;
+  --color-mint-light:     rgba(40, 231, 196, 0.12);
   --color-mint-dark:      #1bc5a8;
+  --color-neon:           #06FF89;
+  --color-neon-dark:      #00de70;
   --color-forest:         #0D1127;
   --color-forest-deep:    #080C1A;
   --color-coral:          #6842E2;
@@ -14,9 +16,9 @@
   --color-bg:             #f4f4f6;
   --color-surface:        #ffffff;
   --color-text:           #0D1127;
-  --color-text-soft:      #5C6C7E;
-  --color-text-muted-dark: rgba(255, 255, 255, 0.65);
-  --color-text-on-dark:   rgba(255, 255, 255, 0.85);
+  --color-text-soft:      #546373;
+  --color-text-muted-dark: rgba(255, 255, 255, 0.82);
+  --color-text-on-dark:   rgba(255, 255, 255, 0.92);
   --color-border:         #e0e0e8;
   --color-border-mint:    rgba(40, 231, 196, 0.2);
   --color-gray-50:        #f7f7f6;
@@ -67,8 +69,8 @@ body {
   /* Buttons */
   .btn-primary {
     @apply inline-flex items-center justify-center;
-    background: #F5C518;
-    color: #0f2d26;
+    background: var(--color-neon);
+    color: #0D1127;
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.95rem;
@@ -76,14 +78,14 @@ body {
     border-radius: var(--radius-full);
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(245, 197, 24, 0.35);
+    box-shadow: 0 6px 20px rgba(6, 255, 137, 0.32);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     text-decoration: none;
   }
   .btn-primary:hover {
-    background: #e6b800;
+    background: var(--color-neon-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(245, 197, 24, 0.45);
+    box-shadow: 0 10px 28px rgba(6, 255, 137, 0.45);
   }
 
   .btn-secondary {
@@ -209,7 +211,7 @@ body {
 
   .section-sub {
     font-size: 1rem;
-    color: var(--color-text-soft);
+    color: #3d4f62;
     line-height: 1.7;
     max-width: 600px;
     margin-bottom: 40px;
