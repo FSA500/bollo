@@ -2,6 +2,7 @@ import Navbar         from './components/Navbar'
 import Footer         from './components/Footer'
 import Mascot         from './components/Mascot'
 import Hero           from './sections/Hero'
+import VideoDemo      from './sections/VideoDemo'
 import WhyReviews     from './sections/WhyReviews'
 import HowItWorks     from './sections/HowItWorks'
 import AiSection      from './sections/AiSection'
@@ -15,34 +16,32 @@ export default function Home() {
       <Navbar />
 
       <main>
-        {/* 1 — Hero */}
+        {/* 1 — Hero (centered, StackAI-style) */}
         <Hero />
 
-        {/* 2 — Why reviews matter */}
-        <WhyReviews />
-        <hr className="section-divider" />
+        {/* 2 — Animated product demo (man checking reviews) */}
+        <VideoDemo />
 
-        {/* 3 — How Bollo helps (5 steps) */}
+        {/* 3 — Why reviews matter */}
+        <WhyReviews />
+
+        {/* 4 — How Bollo helps */}
         <HowItWorks />
 
-        {/* 4 — AI search & visibility (dark section) */}
+        {/* 5 — AI search & visibility */}
         <AiSection />
-        <hr className="section-divider" />
 
-        {/* 5 — We answer reviews for you */}
+        {/* 6 — We answer reviews for you */}
         <ReviewHandling />
-        <hr className="section-divider" />
 
-        {/* 6 — Industries */}
+        {/* 7 — Industries */}
         <Industries />
 
-        {/* 7 — CTA / Contact */}
+        {/* 8 — CTA / Contact */}
         <CtaSection />
       </main>
 
       <Footer />
-
-      {/* Mascot — fixed bottom right */}
       <Mascot />
     </>
   )

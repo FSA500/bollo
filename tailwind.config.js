@@ -24,6 +24,17 @@ module.exports = {
           DEFAULT: '#6842E2',
           hover:   '#5a35d4',
         },
+        purple: {
+          DEFAULT: '#7C5AF8',
+          dark:    '#6544E0',
+          light:   'rgba(124,90,248,0.14)',
+        },
+        void: {
+          DEFAULT: '#030518',
+          deep:    '#020310',
+          surface: '#07091C',
+          card:    'rgba(255,255,255,0.04)',
+        },
         bollo: {
           bg:             '#f4f4f6',
           'bg-gray':      '#e6e6e6',
@@ -40,8 +51,10 @@ module.exports = {
         body:    ['"DM Sans"', 'sans-serif'],
       },
       backgroundImage: {
-        'forest-gradient': 'linear-gradient(135deg, #080C1A 0%, #0D1127 60%, #111830 100%)',
-        'mint-gradient':   'linear-gradient(135deg, #28E7C4, #1bc5a8)',
+        'forest-gradient':  'linear-gradient(135deg, #080C1A 0%, #0D1127 60%, #111830 100%)',
+        'void-gradient':    'linear-gradient(135deg, #030518 0%, #07091C 60%, #0A0D26 100%)',
+        'mint-gradient':    'linear-gradient(135deg, #28E7C4, #1bc5a8)',
+        'brand-gradient':   'linear-gradient(135deg, #7C5AF8 0%, #28E7C4 100%)',
       },
       animation: {
         'float':    'mascotFloat 3.5s ease-in-out infinite',

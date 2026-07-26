@@ -7,110 +7,62 @@ import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 const features = [
-  {
-    icon: (
-      <svg className="w-5 h-5 text-mint flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-      </svg>
-    ),
-    text: 'Vi svarer på alle anmeldelser — positive, neutrale og negative',
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5 text-mint flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <circle cx="12" cy="12" r="6"/>
-        <circle cx="12" cy="12" r="2"/>
-      </svg>
-    ),
-    text: 'Vi tilpasser tonen til dit brands ønskede tone of voice',
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5 text-mint flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-      </svg>
-    ),
-    text: 'Vi sikrer hurtige og professionelle svar hver gang',
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5 text-mint flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="23 4 23 10 17 10"/>
-        <polyline points="1 20 1 14 7 14"/>
-        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-      </svg>
-    ),
-    text: 'Vi skaber ensartet og troværdig kommunikation udadtil',
-  },
-  {
-    icon: (
-      <svg className="w-5 h-5 text-mint flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10"/>
-        <line x1="12" y1="20" x2="12" y2="4"/>
-        <line x1="6" y1="20" x2="6" y2="14"/>
-      </svg>
-    ),
-    text: 'Vi leverer månedlige rapporter med indsigter og tendenser',
-  },
+  { text: 'Vi svarer på alle anmeldelser — positive, neutrale og negative', color: '#28E7C4' },
+  { text: 'Vi tilpasser tonen til dit brands ønskede tone of voice',         color: '#7C5AF8' },
+  { text: 'Vi sikrer hurtige og professionelle svar hver gang',              color: '#06FF89' },
+  { text: 'Vi skaber ensartet og troværdig kommunikation udadtil',           color: '#28E7C4' },
+  { text: 'Vi leverer månedlige rapporter med indsigter og tendenser',       color: '#7C5AF8' },
 ]
 
-const StarFilled = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="#28E7C4" stroke="none">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-  </svg>
-)
-
-const StarEmpty = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="#9CA9B9" stroke="none">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-  </svg>
-)
+function Star({ filled }: { filled: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" style={{ width: 11, height: 11 }} fill={filled ? '#FACC15' : 'rgba(255,255,255,0.10)'} stroke="none">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+  )
+}
 
 export default function ReviewHandling() {
   const container = useRef<HTMLElement>(null)
 
   useGSAP(() => {
-    gsap.from('.rh-left', {
-      opacity: 0,
-      x: -30,
-      duration: 0.8,
-      ease: 'power2.out',
+    gsap.from('.rh-left > *', {
+      opacity: 0, x: -28, duration: 0.7, ease: 'power2.out', stagger: 0.1,
       scrollTrigger: { trigger: '.rh-left', start: 'top 80%' },
     })
-
     gsap.from('.rh-card', {
-      opacity: 0,
-      x: 30,
-      duration: 0.7,
-      ease: 'power2.out',
-      stagger: 0.15,
+      opacity: 0, x: 28, duration: 0.65, ease: 'power2.out', stagger: 0.15,
       scrollTrigger: { trigger: '.rh-cards', start: 'top 80%' },
     })
   }, { scope: container })
 
   return (
-    <section ref={container} className="bg-bollo-surface-gray py-20 px-6 md:px-12">
-      <div className="max-w-[1100px] mx-auto">
+    <section ref={container} className="relative bg-void-surface py-24 px-6 md:px-12 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.020) 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
+      <div className="absolute pointer-events-none" style={{
+        bottom: '-20%', left: '-10%', width: 600, height: 600, borderRadius: '50%',
+        background: 'radial-gradient(ellipse, rgba(40,231,196,0.07) 0%, transparent 65%)',
+      }} />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-[1100px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
           {/* Left */}
           <div className="rh-left">
-            <div className="section-tag">Vi svarer for dig</div>
-            <h2 className="section-h2">
-              Et professionelt team<br />bag hvert eneste svar
+            <div className="section-tag-dark mb-5">Vi svarer for dig</div>
+            <h2 className="section-h2 mb-4">
+              Et professionelt team<br />
+              <span className="gradient-text">bag hvert eneste svar</span>
             </h2>
-            <p className="section-sub">
+            <p className="section-sub mb-8">
               Bollo er ikke bare software — vi er et dedikeret team, der håndterer
               din kommunikation med kunderne professionelt og konsekvent, hver dag.
             </p>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-3">
               {features.map((f, i) => (
-                <li key={i} className="flex items-start gap-3 bg-bollo-bg-gray rounded-xl px-4 py-3">
-                  {f.icon}
-                  <span className="text-forest/90 text-sm leading-relaxed">{f.text}</span>
+                <li key={i} className="flex items-center gap-4 glass-card px-5 py-3.5" style={{ borderRadius: 12 }}>
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', flexShrink: 0, background: f.color, boxShadow: `0 0 8px ${f.color}60` }} />
+                  <span style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.70)', lineHeight: 1.5 }}>{f.text}</span>
                 </li>
               ))}
             </ul>
@@ -120,50 +72,66 @@ export default function ReviewHandling() {
           <div className="rh-cards flex flex-col gap-4">
 
             {/* Positive review */}
-            <div className="rh-card bollo-card">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-mint/20 flex items-center justify-center text-sm font-bold text-forest">MJ</div>
+            <div className="rh-card glass-card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div style={{
+                  width: 36, height: 36, borderRadius: '50%',
+                  background: 'rgba(40,231,196,0.15)', border: '1px solid rgba(40,231,196,0.25)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '0.75rem', fontWeight: 700, color: '#28E7C4',
+                }}>MJ</div>
                 <div>
-                  <div className="text-xs font-bold text-forest">Mette Jensen</div>
-                  <div className="text-xs text-bollo-text-soft flex items-center gap-1">
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>Mette Jensen</div>
+                  <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', display: 'flex', alignItems: 'center', gap: 6, marginTop: 2 }}>
                     <span>Google Maps</span>
-                    <span className="flex gap-0.5 ml-1">
-                      <StarFilled /><StarFilled /><StarFilled /><StarFilled /><StarFilled />
+                    <span style={{ display: 'flex', gap: 2 }}>
+                      {[1,2,3,4,5].map(j => <Star key={j} filled={true} />)}
                     </span>
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-forest/90 mb-3 leading-relaxed">
+              <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.60)', marginBottom: 14, lineHeight: 1.65 }}>
                 "Fantastisk service og super hurtig levering. Vil bestemt anbefale!"
               </p>
-              <div className="bg-mint/10 rounded-lg p-3 border-l-2 border-mint">
-                <div className="text-xs font-bold text-forest mb-1">Svar fra virksomheden · Bollo</div>
-                <p className="text-xs text-forest/90 leading-relaxed">
+              <div style={{
+                background: 'rgba(40,231,196,0.06)', borderRadius: 10,
+                padding: '12px 14px', borderLeft: '2px solid rgba(40,231,196,0.35)',
+              }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#28E7C4', marginBottom: 5, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Svar fra virksomheden · Bollo</div>
+                <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>
                   "Mange tak, Mette! Det glæder os meget at høre. Vi sætter stor pris på din anmeldelse og ser frem til at hjælpe dig igen!"
                 </p>
               </div>
             </div>
 
             {/* Negative review */}
-            <div className="rh-card bollo-card">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-full bg-coral/10 flex items-center justify-center text-sm font-bold text-coral">TP</div>
+            <div className="rh-card glass-card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div style={{
+                  width: 36, height: 36, borderRadius: '50%',
+                  background: 'rgba(124,90,248,0.15)', border: '1px solid rgba(124,90,248,0.25)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '0.75rem', fontWeight: 700, color: '#7C5AF8',
+                }}>TP</div>
                 <div>
-                  <div className="text-xs font-bold text-forest">Thomas P.</div>
-                  <div className="text-xs text-bollo-text-soft flex items-center gap-1">
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>Thomas P.</div>
+                  <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', display: 'flex', alignItems: 'center', gap: 6, marginTop: 2 }}>
                     <span>Trustpilot</span>
-                    <span className="flex gap-0.5 ml-1">
-                      <StarFilled /><StarFilled /><StarEmpty /><StarEmpty /><StarEmpty />
+                    <span style={{ display: 'flex', gap: 2 }}>
+                      {[1,2,3,4,5].map(j => <Star key={j} filled={j <= 2} />)}
                     </span>
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-forest/90 mb-3 leading-relaxed">
+              <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.60)', marginBottom: 14, lineHeight: 1.65 }}>
                 "Oplevede forsinkelse i leveringen og ingen svar på min henvendelse."
               </p>
-              <div className="bg-coral/10 rounded-lg p-3 border-l-2 border-coral">
-                <div className="text-xs font-bold text-forest mb-1">Svar fra virksomheden · Bollo</div>
-                <p className="text-xs text-forest/90 leading-relaxed">
+              <div style={{
+                background: 'rgba(124,90,248,0.06)', borderRadius: 10,
+                padding: '12px 14px', borderLeft: '2px solid rgba(124,90,248,0.35)',
+              }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#7C5AF8', marginBottom: 5, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Svar fra virksomheden · Bollo</div>
+                <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>
                   "Hej Thomas, vi beklager din oplevelse. Vi kontakter dig direkte for at finde en løsning. Det er ikke den standard, vi stræber efter."
                 </p>
               </div>

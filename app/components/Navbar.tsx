@@ -6,49 +6,50 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-bollo-bg/90 backdrop-blur-md border-b border-mint/20 shadow-sm'
+          ? 'bg-void/90 backdrop-blur-xl border-b border-white/[0.07]'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[1100px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-[1100px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-[72px]">
 
         {/* Logo */}
         <a href="/" className="flex items-center">
           <img
-            src={scrolled ? '/bollo-logo-black.png' : '/bollo-logo-white.png'}
+            src="/bollo-logo-white.png"
             alt="Bollo"
-            className="h-8 w-auto transition-all duration-300"
+            className="h-8 w-auto"
           />
         </a>
 
         {/* Desktop nav links */}
-        <div className={`hidden md:flex items-center gap-8 text-sm font-medium transition-colors duration-300 ${
-          scrolled ? 'text-forest/70' : 'text-white/80'
-        }`}>
-          <a href="/reputation-management" className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>Ydelser</a>
-          <a href="/ai-synlighed"          className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>AI-synlighed</a>
-          <a href="/brancher"              className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>Brancher</a>
-          <a href="/om-bollo"              className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>Om Bollo</a>
-          <a href="/kontakt"               className={`transition-colors ${scrolled ? 'hover:text-forest' : 'hover:text-white'}`}>Kontakt</a>
+        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-white/65">
+          <a href="/reputation-management" className="hover:text-white transition-colors duration-200">Ydelser</a>
+          <a href="/ai-synlighed"          className="hover:text-white transition-colors duration-200">AI-synlighed</a>
+          <a href="/brancher"              className="hover:text-white transition-colors duration-200">Brancher</a>
+          <a href="/om-bollo"              className="hover:text-white transition-colors duration-200">Om Bollo</a>
+          <a href="/kontakt"               className="hover:text-white transition-colors duration-200">Kontakt</a>
         </div>
 
         {/* CTA */}
-        <a href="/kontakt" className="btn-primary hidden md:inline-flex text-sm py-3 px-6 cta-trigger">
+        <a
+          href="/kontakt"
+          className="btn-primary hidden md:inline-flex text-sm py-[10px] px-5 cta-trigger"
+        >
           Book en demo
         </a>
 
-        {/* Mobile menu button */}
+        {/* Mobile hamburger */}
         <button
-          className={`md:hidden p-2 transition-colors duration-300 ${scrolled ? 'text-forest' : 'text-white'}`}
+          className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -63,13 +64,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-bollo-bg border-t border-mint/20 px-6 py-4 flex flex-col gap-4 text-sm font-medium text-forest/75">
-          <a href="/reputation-management" onClick={() => setMenuOpen(false)} className="hover:text-forest">Ydelser</a>
-          <a href="/ai-synlighed"          onClick={() => setMenuOpen(false)} className="hover:text-forest">AI-synlighed</a>
-          <a href="/brancher"              onClick={() => setMenuOpen(false)} className="hover:text-forest">Brancher</a>
-          <a href="/om-bollo"              onClick={() => setMenuOpen(false)} className="hover:text-forest">Om Bollo</a>
-          <a href="/kontakt"               onClick={() => setMenuOpen(false)} className="hover:text-forest">Kontakt</a>
-          <a href="/kontakt"               onClick={() => setMenuOpen(false)} className="btn-primary text-center cta-trigger">
+        <div className="md:hidden bg-void/98 backdrop-blur-xl border-t border-white/[0.07] px-6 py-5 flex flex-col gap-4 text-sm font-medium">
+          <a href="/reputation-management" onClick={() => setMenuOpen(false)} className="text-white/65 hover:text-white transition-colors">Ydelser</a>
+          <a href="/ai-synlighed"          onClick={() => setMenuOpen(false)} className="text-white/65 hover:text-white transition-colors">AI-synlighed</a>
+          <a href="/brancher"              onClick={() => setMenuOpen(false)} className="text-white/65 hover:text-white transition-colors">Brancher</a>
+          <a href="/om-bollo"              onClick={() => setMenuOpen(false)} className="text-white/65 hover:text-white transition-colors">Om Bollo</a>
+          <a href="/kontakt"               onClick={() => setMenuOpen(false)} className="text-white/65 hover:text-white transition-colors">Kontakt</a>
+          <a href="/kontakt"               onClick={() => setMenuOpen(false)} className="btn-primary text-center cta-trigger mt-2">
             Book en demo
           </a>
         </div>
